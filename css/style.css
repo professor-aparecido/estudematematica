@@ -8,7 +8,7 @@
   --texto-secundario: #757575; /* Cinza médio */
   --sombra: 0 4px 12px rgba(0, 0, 0, 0.05); 
   --verde: #4caf50; /* Verde acerto */
-  --azul: #2196f3; /* Azul principal */
+  --azul: #1a237e; /* Azul principal */
   --laranja: #ff7043;
   --acerto: #4caf50;
   --erro: #f44336;
@@ -421,4 +421,17 @@ body {
     text-align: center;
     gap: 15px;
   }
+}
+/* Reduz o espaço abaixo do título e acima da pergunta */
+.pergunta-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 0; /* De 5px para 0 */
+}
+
+#pergunta {
+  font-size: 20px;
+  border-top: 1px solid var(--fundo-secundario);
+  padding-top: 10px;
+  margin-top: 0; /* De 5px para 0 */
 }
