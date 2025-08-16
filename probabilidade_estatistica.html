@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Probabilidade e Estatística | Quiz do Professor Aparecido</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]'], ['$$', '$$']] } };
+    </script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>Probabilidade e Estatística</h1>
+    <a href="index.html" class="btn-voltar">Voltar</a>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="conteudo-area">
+    <div class="bloco-assunto">
+      <h2>Probabilidade</h2>
+      <p>Introdução à probabilidade, calculando as chances de eventos em experimentos aleatórios.</p>
+      <div class="materiais">
+        <button class="material-btn">Material Teórico</button>
+        <button class="material-btn">Videoaulas</button>
+        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Probabilidade e Estatística', 'Probabilidade')">
+          Quiz
+        </button>
+      </div>
+    </div>
+    
+    <div class="bloco-assunto">
+      <h2>Média, Moda e Mediana</h2>
+      <p>Entenda e calcule as medidas de tendência central para conjuntos de dados.</p>
+      <div class="materiais">
+        <button class="material-btn">Material Teórico</button>
+        <button class="material-btn">Videoaulas</button>
+        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Probabilidade e Estatística', 'Média, Moda e Mediana')">
+          Quiz
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="quiz-container" id="quizCard" aria-live="polite" style="display:none;"></section>
+  <div class="footer">© 2025 • Quiz didático para estudos</div>
+</main>
+
+<script src="js/quiz.js"></script>
+</body>
+</html>

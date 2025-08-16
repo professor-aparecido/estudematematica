@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Números e Operações | Quiz do Professor Aparecido</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]'], ['$$', '$$']] } };
+    </script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>Números e Operações</h1>
+    <a href="index.html" class="btn-voltar">Voltar</a>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="conteudo-area">
+    <div class="bloco-assunto">
+      <h2>Porcentagem</h2>
+      <p>Entenda o conceito de porcentagem e como aplicá-lo em cálculos e problemas do dia a dia.</p>
+      <div class="materiais">
+        <button class="material-btn">Material Teórico</button>
+        <button class="material-btn">Videoaulas</button>
+        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Números e Operações', 'Porcentagem')">
+          Quiz
+        </button>
+      </div>
+    </div>
+    
+    <div class="bloco-assunto">
+      <h2>Média Aritmética</h2>
+      <p>Aprenda a calcular a média de conjuntos de dados para estatística básica.</p>
+      <div class="materiais">
+        <button class="material-btn">Material Teórico</button>
+        <button class="material-btn">Videoaulas</button>
+        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Números e Operações', 'Média Aritmética')">
+          Quiz
+        </button>
+      </div>
+    </div>
+    
+    <div class="bloco-assunto">
+      <h2>Operações Fundamentais</h2>
+      <p>Revise e pratique as operações de soma, subtração, multiplicação e divisão com números.</p>
+      <div class="materiais">
+        <button class="material-btn">Material Teórico</button>
+        <button class="material-btn">Videoaulas</button>
+        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Números e Operações', 'Operações Fundamentais')">
+          Quiz
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="quiz-container" id="quizCard" aria-live="polite" style="display:none;"></section>
+  <div class="footer">© 2025 • Quiz didático para estudos</div>
+</main>
+
+<script src="js/quiz.js"></script>
+</body>
+</html>
