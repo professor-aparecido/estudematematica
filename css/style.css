@@ -1,29 +1,29 @@
-/* =================== TEMA 1: MODERNO E MINIMALISTA =================== */
+/* =================== TEMA 2: VIBRANTE E ACESSÍVEL =================== */
 
 /* --- VARIÁVEIS DE CORES --- */
 :root {
-  --fundo-principal: #f8f9fa; /* Cinza bem claro */
-  --fundo-secundario: #e9ecef; /* Cinza claro */
-  --texto-principal: #212529; /* Cinza escuro */
-  --texto-secundario: #6c757d; /* Cinza médio */
-  --sombra: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra mais suave */
+  --fundo-principal: #343a40; /* Cinza escuro */
+  --fundo-secundario: #495057; /* Cinza mais claro */
+  --texto-principal: #f8f9fa; /* Branco */
+  --texto-secundario: #ced4da; /* Cinza claro */
+  --sombra: 0 6px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
   --verde: #28a745;
-  --azul: #007bff; /* Azul padrão */
-  --laranja: #fd7e14;
+  --azul: #17a2b8; /* Azul turquesa */
+  --laranja: #ffc107;
   --acerto: #28a745;
   --erro: #dc3545;
-  --badge: #007bff;
+  --badge: #17a2b8;
 
-  --cor-destaque: #343a40; /* Azul escuro/preto para destaque */
-  --cor-destaque-hover: #495057; /* Escurece no hover */
+  --cor-destaque: #e83e8c; /* Rosa vibrante */
+  --cor-destaque-hover: #d63384; /* Escurece no hover */
 }
 
 /* --- ESTILOS GLOBAIS E TIPOGRAFIA --- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 * {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,11 +33,11 @@ body {
   padding: 0;
   background-color: var(--fundo-principal);
   color: var(--texto-principal);
-  line-height: 1.5; /* Espaçamento de linha confortável */
+  line-height: 1.6;
 }
 
 .main {
-  padding: 30px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,9 +46,9 @@ body {
 
 /* --- ESTILO DO CABEÇALHO (TOPBAR) --- */
 .topbar {
-  background: var(--cor-destaque);
+  background: var(--fundo-secundario);
   color: #fff;
-  padding: 20px 0;
+  padding: 18px 0;
   box-shadow: var(--sombra);
 }
 
@@ -63,7 +63,7 @@ body {
 
 .topbar h1 {
   margin: 0;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -72,27 +72,27 @@ body {
   background-color: var(--cor-destaque);
   color: #fff;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 6px;
-  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .material-btn:hover, .quiz-btn:hover, .bloco-busca button:hover, .btn-voltar:hover {
   background-color: var(--cor-destaque-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .btn-voltar {
-  background: var(--fundo-secundario);
-  color: var(--texto-principal);
-  font-weight: 500;
+  background: #fff;
+  color: var(--cor-destaque);
+  font-weight: 700;
+  padding: 10px 18px;
 }
 
 #confirmarBtn {
@@ -107,7 +107,7 @@ body {
   display: none;
 }
 #proximaBtn:hover {
-  background-color: #0069d9;
+  background-color: #138496;
 }
 
 #reiniciarBtn {
@@ -115,14 +115,14 @@ body {
   display: none;
 }
 #reiniciarBtn:hover {
-  background-color: #e06c00;
+  background-color: #e0a800;
 }
 
 /* --- ESTILOS DAS ÁREAS DE CONTEÚDO E QUIZ --- */
 .quiz-container, .bloco-gabarito, .bloco-assunto, .bloco-busca, .areaBtn {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  background: var(--fundo-secundario);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
   padding: 25px;
   margin-bottom: 25px;
 }
@@ -139,27 +139,28 @@ body {
 }
 
 .pergunta-card h3 {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
 }
 
 #pergunta {
   font-size: 20px;
-  border-top: 1px solid var(--fundo-secundario);
-  padding-top: 20px;
-  margin-top: 20px;
+  border-top: 1px solid var(--texto-secundario);
+  padding-top: 15px;
+  margin-top: 25px;
 }
 
 .pergunta-card img {
   max-width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-bottom: 20px;
 }
 
 /* --- PROGRESSO --- */
 .progresso {
-  background: var(--fundo-secundario);
+  background: var(--fundo-principal);
   border-radius: 10px;
   height: 10px;
   margin-bottom: 30px;
@@ -175,11 +176,16 @@ body {
 }
 
 /* --- ALTERNATIVAS --- */
+.alternativas-lista {
+  list-style: none;
+  padding: 0;
+}
+
 .alternativa, .gabarito-respostas li {
-  background: var(--fundo-secundario);
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 12px;
+  background: var(--fundo-principal);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
   display: flex;
@@ -187,23 +193,23 @@ body {
 }
 
 .alternativa:hover, .alternativa.selecionada {
-  background: #e1e3e6;
+  background: #3a4046;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .alternativa.selecionada {
-  background: #d4eaf7;
-  box-shadow: inset 0 0 0 2px var(--azul);
+  background: #555c63;
+  box-shadow: inset 0 0 0 2px var(--cor-destaque);
 }
 
 .alternativa .letra, .gabarito-respostas .letra {
   font-weight: 700;
   color: var(--cor-destaque);
   margin-right: 15px;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,9 +223,8 @@ body {
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
-  margin-top: 10px;
 }
 
 .msg-acerto {
@@ -237,10 +242,10 @@ body {
 }
 
 .gabarito-respostas li {
-  background: var(--fundo-secundario);
-  padding: 12px;
-  margin-bottom: 8px;
-  border-radius: 6px;
+  background: var(--fundo-principal);
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
 }
 
 .alternativa-correta {
@@ -254,7 +259,7 @@ body {
 }
 
 .gabarito-status {
-  margin-top: 20px;
+  margin-top: 15px;
   font-weight: bold;
 }
 
@@ -276,23 +281,22 @@ body {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  padding: 30px;
+  padding: 25px;
   width: calc(33.333% - 14px);
   color: var(--texto-principal);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
   transition: transform 0.2s, box-shadow 0.2s;
-  border-radius: 8px;
 }
 
 .areaBtn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .areaBtn span {
-  font-size: 45px;
-  margin-bottom: 15px;
+  font-size: 40px;
+  margin-bottom: 10px;
 }
 
 .conteudo-area {
@@ -318,23 +322,23 @@ body {
 }
 
 .material-btn {
-  background: var(--fundo-secundario);
+  background: var(--fundo-principal);
   color: var(--texto-secundario);
-  font-weight: 500;
-  border-radius: 6px;
+  font-weight: bold;
+  border-radius: 8px;
 }
 
 .busca-input-wrap {
   display: flex;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .busca-input-wrap input {
   flex: 1;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid var(--fundo-secundario);
-  border-radius: 6px;
+  border-radius: 50px;
   font-size: 16px;
   width: 100%;
   max-width: 300px;
@@ -346,10 +350,10 @@ body {
 }
 
 .habilidades-lista li {
-  background-color: var(--fundo-secundario);
+  background-color: var(--fundo-principal);
   border-left: 5px solid var(--cor-destaque);
-  margin-bottom: 12px;
-  padding: 16px;
+  margin-bottom: 10px;
+  padding: 15px;
   border-radius: 8px;
   font-size: 16px;
 }
@@ -359,11 +363,11 @@ body {
 }
 
 #resultados .bloco-assunto {
-  background-color: #f7f7f7;
+  background-color: var(--fundo-principal);
   border-left: 5px solid var(--azul);
-  padding: 18px;
-  margin-bottom: 18px;
-  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
   transition: transform 0.2s;
 }
 
@@ -374,7 +378,7 @@ body {
 /* --- FOOTER --- */
 .footer {
   text-align: center;
-  padding: 25px;
+  padding: 20px;
   color: var(--texto-secundario);
   font-size: 14px;
 }
@@ -403,6 +407,6 @@ body {
   .topbar-inner {
     flex-direction: column;
     text-align: center;
-    gap: 15px;
+    gap: 10px;
   }
 }
