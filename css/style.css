@@ -8,7 +8,7 @@
   --texto-secundario: #757575; /* Cinza médio */
   --sombra: 0 4px 12px rgba(0, 0, 0, 0.05); 
   --verde: #4caf50; /* Verde acerto */
-  --azul: #ff7043; /* Azul principal */
+  --azul: #1a237e; /* Azul principal */
   --laranja: #ff7043;
   --acerto: #4caf50;
   --erro: #f44336;
@@ -178,7 +178,7 @@ body {
 /* --- ALTERNATIVAS --- */
 .alternativa, .gabarito-respostas li {
   background: var(--fundo-secundario);
-  padding: 16px 16px 16px 1px; /* Aumenta o espaçamento esquerdo para 1px */
+  padding: 5px 16px 16px 5px; /* Aumenta o espaçamento esquerdo para 5px */
   border-radius: 8px;
   margin-bottom: 12px;
   cursor: pointer;
