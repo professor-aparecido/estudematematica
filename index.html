@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Álgebra | Quiz do Professor Aparecido</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['\\(', '\\)']]
-        },
-        svg: {
-          fontCache: 'global'
-        }
-      };
-    </script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estude Matemática</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+      // Configuração para processar equações inline \(...\) e outras
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-    <header class="topbar">
-        <div class="topbar-inner">
-            <h1 class="titulo">Álgebra</h1>
-            <a href="index.html" class="btn-voltar">Voltar</a>
-        </div>
-    </header>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <h1 class="titulo">Estude Matemática</h1>
+            <a href="index.html" class="btn-voltar">Voltar</a>
+        </div>
+    </header>
 
-    <main class="main">
-        <div class="conteudo-area">
-            <div class="bloco-area">
-                <h2>Escolha um Assunto</h2>
-                <div class="sub-area">
-                    <button class="subAreaBtn" onclick="iniciarQuizPorAssunto('Matemática', 'Álgebra')">Fazer Quiz</button>
-                    <a href="material_teorico.html" class="subAreaBtn">Material Teórico</a>
-                    <a href="aplicativo.html" class="subAreaBtn">Aplicativo</a>
-                </div>
-            </div>
-        </div>
+    <main class="main">
+        <div class="conteudo-area">
+            <div id="telaInicial">
+                <a href="algebra.html" class="areaBtn">
+                    <span>📚</span>Álgebra
+                </a>
+                <a href="geometria.html" class="areaBtn">
+                    <span>📐</span>Geometria
+                </a>
+                <a href="medidas.html" class="areaBtn">
+                    <span>📏</span>Grandezas e Medidas
+                </a>
+                <a href="numeros.html" class="areaBtn">
+                    <span>🔢</span>Números e Operações
+                </a>
+                <a href="probabilidade_estatistica.html" class="areaBtn">
+                    <span>📊</span>Probabilidade e Estatística
+                </a>
+                <a href="bncc.html" class="areaBtn">
+                    <span>🔎</span>Busca por BNCC
+                </a>
+            </div>
+        </div>
 
-        <div id="quizCard" class="quiz-container" style="display:none;">
-                    </div>
-    </main>
+        <div id="quizCard" class="quiz-container" style="display:none;">
+            </div>
+    </main>
 
-    <footer class="footer">
-        <p>&copy; 2024 Estude Matemática. Todos os direitos reservados.</p>
-    </footer>
-    
-    <script src="js/quiz.js"></script>
+    <footer class="footer">
+        <p>&copy; 2024 Estude Matemática. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/quiz.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
