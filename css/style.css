@@ -518,3 +518,21 @@ body {
 .habilidades-lista li strong {
   color: var(--azul-escuro);
 }
+/* --- Ajustes Visuais do Quiz --- */
+
+/* 1. Espaço entre as linhas */
+body {
+  /* Altera a altura da linha para um valor um pouco mais compacto */
+  line-height: 1.4; 
+}
+
+/* 2. Linha horizontal e tamanho da fonte da pergunta */
+#pergunta {
+  /* Adiciona uma linha superior com um pouco de espaçamento */
+  border-top: 1px solid var(--cinza-medio);
+  padding-top: 15px; 
+  margin-top: 25px;
+
+  /* Reduz o tamanho da fonte da pergunta */
+  font-size: 20px; 
+}
