@@ -8,7 +8,7 @@
   --texto-secundario: #757575; /* Cinza médio */
   --sombra: 0 4px 12px rgba(0, 0, 0, 0.05); 
   --verde: #4caf50; /* Verde acerto */
-  --azul: #ff7043; /* Azul principal */
+  --azul: #1a237e; /* Azul principal */
   --laranja: #ff7043;
   --acerto: #4caf50;
   --erro: #f44336;
@@ -178,7 +178,7 @@ body {
 /* --- ALTERNATIVAS --- */
 .alternativa, .gabarito-respostas li {
   background: var(--fundo-secundario);
-  padding: 16px;
+  padding: 16px 16px 16px 6px; /* --- 16 para atual --- */
   border-radius: 8px;
   margin-bottom: 12px;
   cursor: pointer;
@@ -201,7 +201,7 @@ body {
 .alternativa .letra, .gabarito-respostas .letra {
   font-weight: 700;
   color: var(--texto-principal);
-  margin-right: 5px; /* --- 15 para 5 --- */
+  margin-right: 10px; /* --- 15 para 10 --- */
   width: 32px;
   height: 32px;
   min-width: 32px;
