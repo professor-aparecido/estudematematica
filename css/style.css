@@ -124,7 +124,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
   padding: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 
 .quiz-container {
@@ -155,7 +155,7 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 /* --- PROGRESSO --- */
