@@ -119,7 +119,12 @@ body {
 }
 
 /* Alternativas */
-.alternativa {
+.alternativas-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.alternativa, .gabarito-respostas li {
   background: var(--fundo-secundario);
   padding: 15px;
   border-radius: 10px;
@@ -140,7 +145,7 @@ body {
   box-shadow: inset 0 0 0 2px var(--azul);
 }
 
-.alternativa .letra {
+.alternativa .letra, .gabarito-respostas .letra {
   font-weight: bold;
   color: var(--azul);
   margin-right: 10px;
@@ -214,6 +219,54 @@ button:hover {
 
 #particles {
   display: inline-block;
+}
+
+/* Gabarito */
+.bloco-gabarito {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
+  margin-bottom: 20px;
+}
+
+.bloco-gabarito h3 {
+  font-size: 18px;
+  margin-top: 0;
+  color: var(--azul);
+}
+
+.bloco-gabarito p {
+  color: var(--texto-secundario);
+  margin: 0 0 15px;
+}
+
+.gabarito-respostas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gabarito-respostas li {
+  background: var(--fundo-secundario);
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+
+.alternativa-correta {
+  background-color: var(--acerto) !important;
+  color: white;
+}
+
+.alternativa-errada {
+  background-color: var(--erro) !important;
+  color: white;
+}
+
+.gabarito-status {
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 /* Botões da Tela Inicial e Áreas */
