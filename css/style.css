@@ -1,30 +1,30 @@
-/* =================== TEMA 3: BRILHO E CONTRASTE =================== */
+/* =================== TEMA 1: ROXO E SERENO =================== */
 
 /* --- VARIÁVEIS DE CORES --- */
 :root {
-  --fundo-principal: #fdfdfe; /* Branco suave */
-  --fundo-secundario: #f1f2f6; /* Cinza claro */
-  --texto-principal: #424242; /* Cinza escuro */
-  --texto-secundario: #888888; /* Cinza médio */
-  --sombra: 0 4px 12px rgba(0, 0, 0, 0.08); 
-  --verde: #86b979; /* Verde acerto */
-  --azul: #8a92e8; /* Lavanda principal */
-  --laranja: #ff9191; /* Rosa-coral */
-  --acerto: #86b979;
-  --erro: #e88a92;
-  --badge: #8a92e8;
+  --fundo-principal: #f4f7f9; /* Fundo azul-claro */
+  --fundo-secundario: #e9eff2; /* Cinza-azulado claro */
+  --texto-principal: #34495e; /* Azul marinho escuro */
+  --texto-secundario: #7f8c8d; /* Cinza médio */
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.05); 
+  --verde: #599748; /* Verde acerto */
+  --azul: #51a3a3; /* Azul principal */
+  --laranja: #f38630;
+  --acerto: #599748;
+  --erro: #c04938;
+  --badge: #51a3a3;
 
-  --cor-principal-barra: #9B59B6; /* Roxo forte */
-  --cor-destaque: #f1c40f; /* Amarelo vibrante */
-  --cor-destaque-hover: #d1b40d;
+  --cor-principal-barra: #6A1B9A; /* Roxo mais forte */
+  --cor-destaque: #e57a44; /* Coral para destaque */
+  --cor-destaque-hover: #d16b3d;
 }
 
 /* --- ESTILOS GLOBAIS E TIPOGRAFIA --- */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 * {
   box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,13 +32,13 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--fundo-secundario);
+  background-color: var(--fundo-principal);
   color: var(--texto-principal);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .main {
-  padding: 25px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,7 +49,7 @@ body {
 .topbar {
   background: var(--cor-principal-barra);
   color: #fff;
-  padding: 18px 0;
+  padding: 20px 0;
   box-shadow: var(--sombra);
 }
 
@@ -64,7 +64,7 @@ body {
 
 .topbar h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
 }
 
@@ -73,19 +73,19 @@ body {
   background-color: var(--azul);
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 6px;
   transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s;
 }
 
 .material-btn:hover, .quiz-btn:hover, .bloco-busca button:hover {
-  background-color: #727ad1;
+  background-color: #438f8f;
   transform: translateY(-2px);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
@@ -93,19 +93,18 @@ body {
 .btn-voltar {
   background: var(--fundo-secundario);
   color: var(--texto-principal);
-  font-weight: 700;
-  padding: 10px 18px;
+  font-weight: 500;
 }
+
 .btn-voltar:hover {
-  background-color: #e0e0e4;
+  background-color: #dbe0d9;
 }
 
 #confirmarBtn {
   background: var(--verde);
 }
-
 #confirmarBtn:hover {
-  background-color: #669e5b;
+  background-color: #4a823c;
 }
 
 #proximaBtn {
@@ -114,18 +113,15 @@ body {
 }
 
 #reiniciarBtn {
-  background: var(--laranja);
+  background: var(--cor-destaque);
   display: none;
-}
-#reiniciarBtn:hover {
-  background-color: #d1787d;
 }
 
 /* --- ESTILOS DAS ÁREAS DE CONTEÚDO E QUIZ --- */
 .quiz-container, .bloco-gabarito, .bloco-assunto, .bloco-busca, .areaBtn {
-  background: var(--fundo-principal);
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
   padding: 25px;
   margin-bottom: 25px;
 }
@@ -142,22 +138,22 @@ body {
 }
 
 .pergunta-card h3 {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 600;
   margin-bottom: 5px; 
 }
 
 #pergunta {
   font-size: 20px;
   border-top: 1px solid var(--fundo-secundario);
-  padding-top: 15px;
+  padding-top: 20px;
   margin-top: 5px; 
 }
 
 .pergunta-card img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 20px;
 }
 
@@ -172,23 +168,18 @@ body {
 
 #barraProgresso {
   height: 100%;
-  background: var(--cor-destaque);
+  background: var(--azul);
   border-radius: 10px;
   width: 0%;
   transition: width 0.4s ease-in-out;
 }
 
 /* --- ALTERNATIVAS --- */
-.alternativas-lista {
-  list-style: none;
-  padding: 0;
-}
-
 .alternativa, .gabarito-respostas li {
   background: var(--fundo-secundario);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
   display: flex;
@@ -196,13 +187,13 @@ body {
 }
 
 .alternativa:hover, .alternativa.selecionada {
-  background: #e0e0e4;
+  background: #e0e6e9;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .alternativa.selecionada {
-  background: #d1d4f2;
+  background: #d1d9e2;
   box-shadow: inset 0 0 0 2px var(--azul);
 }
 
@@ -210,9 +201,9 @@ body {
   font-weight: 700;
   color: var(--texto-principal);
   margin-right: 15px;
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -226,8 +217,9 @@ body {
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .msg-acerto {
@@ -246,9 +238,9 @@ body {
 
 .gabarito-respostas li {
   background: var(--fundo-secundario);
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
 }
 
 .alternativa-correta {
@@ -262,7 +254,7 @@ body {
 }
 
 .gabarito-status {
-  margin-top: 15px;
+  margin-top: 20px;
   font-weight: bold;
 }
 
@@ -284,23 +276,23 @@ body {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  padding: 25px;
+  padding: 30px;
   width: calc(33.333% - 14px);
   color: var(--texto-principal);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   transition: transform 0.2s, box-shadow 0.2s;
   border-radius: 8px;
 }
 
 .areaBtn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .areaBtn span {
-  font-size: 40px;
-  margin-bottom: 10px;
+  font-size: 45px;
+  margin-bottom: 15px;
 }
 
 .conteudo-area {
@@ -311,7 +303,7 @@ body {
 .bloco-assunto h2 {
   font-size: 24px;
   margin: 0 0 10px;
-  color: var(--laranja);
+  color: var(--azul);
 }
 
 .bloco-assunto p {
@@ -326,23 +318,23 @@ body {
 }
 
 .material-btn {
-  background: var(--fundo-principal);
+  background: var(--fundo-secundario);
   color: var(--texto-secundario);
-  font-weight: bold;
-  border-radius: 8px;
+  font-weight: 500;
+  border-radius: 6px;
 }
 
 .busca-input-wrap {
   display: flex;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .busca-input-wrap input {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid var(--fundo-secundario);
-  border-radius: 50px;
+  border-radius: 6px;
   font-size: 16px;
   width: 100%;
   max-width: 300px;
@@ -356,8 +348,8 @@ body {
 .habilidades-lista li {
   background-color: var(--fundo-secundario);
   border-left: 5px solid var(--azul);
-  margin-bottom: 10px;
-  padding: 15px;
+  margin-bottom: 12px;
+  padding: 16px;
   border-radius: 8px;
   font-size: 16px;
 }
@@ -367,11 +359,11 @@ body {
 }
 
 #resultados .bloco-assunto {
-  background-color: var(--fundo-principal);
+  background-color: #f7f7f7;
   border-left: 5px solid var(--azul);
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 6px;
+  padding: 18px;
+  margin-bottom: 18px;
+  border-radius: 8px;
   transition: transform 0.2s;
 }
 
@@ -382,7 +374,7 @@ body {
 /* --- FOOTER --- */
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   color: var(--texto-secundario);
   font-size: 14px;
 }
@@ -411,6 +403,6 @@ body {
   .topbar-inner {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    gap: 15px;
   }
 }
