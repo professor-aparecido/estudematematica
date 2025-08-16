@@ -1,29 +1,29 @@
-/* =================== TEMA 1: CALMO E NATURAL =================== */
+/* =================== TEMA 2: DIVERTIDO E COLORIDO =================== */
 
 /* --- VARIÁVEIS DE CORES --- */
 :root {
-  --fundo-principal: #f3f7f0; /* Fundo verde-claro */
-  --fundo-secundario: #e8ece7; /* Cinza esverdeado claro */
-  --texto-principal: #333d29; /* Verde musgo escuro */
-  --texto-secundario: #5b6357; /* Cinza esverdeado */
-  --sombra: 0 4px 12px rgba(0, 0, 0, 0.05); 
-  --verde: #599748; /* Verde acerto */
-  --azul: #51909a; /* Azul principal */
-  --laranja: #e57a44; /* Laranja acerto/erro */
-  --acerto: #599748;
-  --erro: #c04938;
-  --badge: #51909a;
+  --fundo-principal: #fff; /* Fundo branco */
+  --fundo-secundario: #f1f7f9; /* Cinza bem claro */
+  --texto-principal: #333; /* Preto */
+  --texto-secundario: #666; /* Cinza escuro */
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  --verde: #2ecc71; /* Verde esmeralda */
+  --azul: #3498db; /* Azul turquesa */
+  --laranja: #f39c12;
+  --acerto: #2ecc71;
+  --erro: #e74c3c;
+  --badge: #3498db;
 
-  --cor-destaque: #e57a44; /* Coral para destaque */
-  --cor-destaque-hover: #d16b3d;
+  --cor-destaque: #9b59b6; /* Roxo para destaque */
+  --cor-destaque-hover: #8e44ad;
 }
 
 /* --- ESTILOS GLOBAIS E TIPOGRAFIA --- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
 
 * {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,9 +31,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--fundo-principal);
+  background-color: var(--fundo-secundario);
   color: var(--texto-principal);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .main {
@@ -46,7 +46,7 @@ body {
 
 /* --- ESTILO DO CABEÇALHO (TOPBAR) --- */
 .topbar {
-  background: var(--azul);
+  background: var(--cor-destaque);
   color: #fff;
   padding: 20px 0;
   box-shadow: var(--sombra);
@@ -79,14 +79,14 @@ body {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 50px;
   transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s;
 }
 
 .material-btn:hover, .quiz-btn:hover, .bloco-busca button:hover {
-  background-color: #43777f;
+  background-color: #2980b9;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra mais suave */
 }
 
 .btn-voltar {
@@ -94,33 +94,38 @@ body {
   color: var(--texto-principal);
   font-weight: 500;
 }
-
 .btn-voltar:hover {
-  background-color: #dbe0d9;
+  background-color: #e0e0e4;
 }
 
 #confirmarBtn {
   background: var(--verde);
 }
 #confirmarBtn:hover {
-  background-color: #4a823c;
+  background-color: #27ae60;
 }
 
 #proximaBtn {
-  background: var(--azul);
+  background: var(--cor-destaque);
   display: none;
+}
+#proximaBtn:hover {
+  background-color: var(--cor-destaque-hover);
 }
 
 #reiniciarBtn {
-  background: var(--cor-destaque);
+  background: var(--laranja);
   display: none;
+}
+#reiniciarBtn:hover {
+  background-color: #e67e22;
 }
 
 /* --- ESTILOS DAS ÁREAS DE CONTEÚDO E QUIZ --- */
 .quiz-container, .bloco-gabarito, .bloco-assunto, .bloco-busca, .areaBtn {
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
   padding: 25px;
   margin-bottom: 25px;
 }
@@ -133,19 +138,20 @@ body {
 .pergunta-card h2 {
   font-size: 18px;
   color: var(--texto-secundario);
-  margin: 0 0 10px;
+  margin: 0 0 5px; 
 }
 
 .pergunta-card h3 {
   font-size: 24px;
   font-weight: 600;
+  margin-bottom: 5px; 
 }
 
 #pergunta {
   font-size: 20px;
   border-top: 1px solid var(--fundo-secundario);
   padding-top: 20px;
-  margin-top: 20px;
+  margin-top: 5px; 
 }
 
 .pergunta-card img {
@@ -185,23 +191,23 @@ body {
 }
 
 .alternativa:hover, .alternativa.selecionada {
-  background: #dbe0d9;
+  background: #e0e0e4;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .alternativa.selecionada {
-  background: #d4eaf7;
-  box-shadow: inset 0 0 0 2px var(--azul);
+  background: #d1d4f2;
+  box-shadow: inset 0 0 0 2px var(--cor-destaque);
 }
 
 .alternativa .letra, .gabarito-respostas .letra {
   font-weight: 700;
   color: var(--texto-principal);
   margin-right: 15px;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -215,9 +221,8 @@ body {
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
-  margin-top: 10px;
 }
 
 .msg-acerto {
@@ -236,9 +241,9 @@ body {
 
 .gabarito-respostas li {
   background: var(--fundo-secundario);
-  padding: 12px;
-  margin-bottom: 8px;
-  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
 }
 
 .alternativa-correta {
@@ -252,7 +257,7 @@ body {
 }
 
 .gabarito-status {
-  margin-top: 20px;
+  margin-top: 15px;
   font-weight: bold;
 }
 
@@ -274,23 +279,23 @@ body {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  padding: 30px;
+  padding: 25px;
   width: calc(33.333% - 14px);
   color: var(--texto-principal);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
   transition: transform 0.2s, box-shadow 0.2s;
   border-radius: 8px;
 }
 
 .areaBtn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .areaBtn span {
-  font-size: 45px;
-  margin-bottom: 15px;
+  font-size: 40px;
+  margin-bottom: 10px;
 }
 
 .conteudo-area {
@@ -301,7 +306,7 @@ body {
 .bloco-assunto h2 {
   font-size: 24px;
   margin: 0 0 10px;
-  color: var(--azul);
+  color: var(--cor-destaque);
 }
 
 .bloco-assunto p {
@@ -316,23 +321,23 @@ body {
 }
 
 .material-btn {
-  background: var(--fundo-secundario);
+  background: var(--fundo-principal);
   color: var(--texto-secundario);
-  font-weight: 500;
-  border-radius: 6px;
+  font-weight: bold;
+  border-radius: 8px;
 }
 
 .busca-input-wrap {
   display: flex;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .busca-input-wrap input {
   flex: 1;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid var(--fundo-secundario);
-  border-radius: 6px;
+  border-radius: 50px;
   font-size: 16px;
   width: 100%;
   max-width: 300px;
@@ -345,23 +350,23 @@ body {
 
 .habilidades-lista li {
   background-color: var(--fundo-secundario);
-  border-left: 5px solid var(--azul);
-  margin-bottom: 12px;
-  padding: 16px;
+  border-left: 5px solid var(--cor-destaque);
+  margin-bottom: 10px;
+  padding: 15px;
   border-radius: 8px;
   font-size: 16px;
 }
 
 .habilidades-lista li strong {
-  color: var(--azul);
+  color: var(--cor-destaque);
 }
 
 #resultados .bloco-assunto {
-  background-color: #f7f7f7;
+  background-color: var(--fundo-principal);
   border-left: 5px solid var(--azul);
-  padding: 18px;
-  margin-bottom: 18px;
-  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
   transition: transform 0.2s;
 }
 
@@ -372,7 +377,7 @@ body {
 /* --- FOOTER --- */
 .footer {
   text-align: center;
-  padding: 25px;
+  padding: 20px;
   color: var(--texto-secundario);
   font-size: 14px;
 }
@@ -401,6 +406,6 @@ body {
   .topbar-inner {
     flex-direction: column;
     text-align: center;
-    gap: 15px;
+    gap: 10px;
   }
 }
