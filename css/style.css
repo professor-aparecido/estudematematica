@@ -435,5 +435,5 @@ body {
 /* --- ESTILO ESPECÍFICO PARA O QUIZ --- */
 /* Esta nova regra sobrescreve o padding, aplicando um valor diferente APENAS para o quiz */
 .quiz-container {
-  padding: 15px 5px; /*  em cima/embaixo,  nas laterais */
+  padding: 2px 15px; /*  em cima/embaixo,  nas laterais */
 }
