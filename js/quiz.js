@@ -1,0 +1,262 @@
+/* =================== ESTADO =================== */
+const TOTAL_POR_TENTATIVA = 4;
+let questoesSelecionadas = [];
+let indiceQuestao = 0;
+let respostaSelecionada = null;
+let acertos = 0;
+let todasQuestoes = [];
+
+/* =================== CONFIGURAÇÃO =================== */
+const arquivosQuestoes = {
+  'Álgebra': '/data/algebra.json',
+  'Geometria': '/data/geometria.json',
+  'Grandezas e Medidas': '/data/medidas.json',
+  'Números e Operações': '/data/numeros.json',
+  'Probabilidade e Estatística': '/data/probabilidade_estatistica.json'
+};
+
+/* =================== SOM =================== */
+let audioCtx=null;
+function ensureAudio(){
+  if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+  if(audioCtx.state==="suspended") audioCtx.resume();
+}
+function somAcerto(){
+  ensureAudio();
+  const t=audioCtx.currentTime;
+  const g=audioCtx.createGain();
+  g.gain.setValueAtTime(0.0001,t);
+  g.gain.exponentialRampToValueAtTime(0.18,t+0.02);
+  g.gain.exponentialRampToValueAtTime(0.0001,t+0.35);
+  const o1=audioCtx.createOscillator();
+  const o2=audioCtx.createOscillator();
+  o1.type="sine"; o2.type="sine";
+  o1.frequency.setValueAtTime(660,t);
+  o2.frequency.setValueAtTime(880,t+0.02);
+  o1.connect(g); o2.connect(g); g.connect(audioCtx.destination);
+  o1.start(t); o2.start(t+0.01);
+  o1.stop(t+0.36); o2.stop(t+0.36);
+}
+function somErro(){
+  ensureAudio();
+  const t=audioCtx.currentTime;
+  const g=audioCtx.createGain();
+  g.gain.setValueAtTime(0.0001,t);
+  g.gain.exponentialRampToValueAtTime(0.12,t+0.02);
+  g.gain.exponentialRampToValueAtTime(0.0001,t+0.35);
+  const o=audioCtx.createOscillator();
+  o.type="sine";
+  o.frequency.setValueAtTime(440,t);
+  o.frequency.exponentialRampToValueAtTime(320,t+0.25);
+  o.connect(g); g.connect(audioCtx.destination);
+  o.start(t); o.stop(t+0.35);
+}
+
+/* =================== FUNÇÕES DE CARREGAMENTO =================== */
+async function carregarTodasQuestoes(){
+  if (todasQuestoes.length > 0) {
+    return;
+  }
+  
+  let pool = [];
+  const baseHref = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+  const arquivos = Object.values(arquivosQuestoes);
+  
+  try {
+    const promessas = arquivos.map(arq => fetch(baseHref + arq).then(res => res.json()));
+    const resultados = await Promise.all(promessas);
+    resultados.forEach(res => pool = pool.concat(res));
+  } catch (error) {
+    console.error("Erro ao carregar as questões:", error);
+    alert("Ocorreu um erro ao carregar as questões. Tente novamente mais tarde.");
+    return;
+  }
+  
+  todasQuestoes = pool;
+}
+
+/* =================== FUNÇÕES DE INÍCIO DO QUIZ =================== */
+function iniciarQuiz(pool){
+  acertos = 0;
+  indiceQuestao = 0;
+  respostaSelecionada = null;
+
+  questoesSelecionadas = embaralhar(pool).slice(0, Math.min(TOTAL_POR_TENTATIVA, pool.length));
+  
+  if (questoesSelecionadas.length === 0) {
+      alert("Nenhuma questão encontrada para a seleção. Verifique o console para mais detalhes.");
+      console.error("Pool de questões vazio para a seleção:", pool); // Linha de depuração
+      reiniciarQuiz();
+      return;
+  }
+
+  document.getElementById("quizCard").style.display="block";
+  document.getElementById("reiniciarBtn").style.display="none";
+  document.getElementById("mensagem").innerHTML = "";
+
+  const conteudoArea = document.querySelector('.conteudo-area');
+  if (conteudoArea) {
+    conteudoArea.style.display = "none";
+  }
+
+  atualizarBarraProgresso();
+  mostrarQuestao();
+}
+
+async function iniciarQuizPorAssunto(area, assunto){
+  await carregarTodasQuestoes();
+  const pool = todasQuestoes.filter(q => q.area === area && q.assunto === assunto);
+  iniciarQuiz(pool);
+}
+
+/* =================== FUNÇÕES DE BUSCA =================== */
+async function buscarHabilidade(){
+  const habilidade = document.getElementById('inputHabilidade').value.trim().toUpperCase();
+  const resultadosDiv = document.getElementById('resultados');
+  resultadosDiv.innerHTML = 'Carregando...';
+
+  if (!habilidade) {
+      resultadosDiv.innerHTML = '<p>Por favor, digite um código de habilidade.</p>';
+      return;
+  }
+  
+  await carregarTodasQuestoes();
+  const questoesEncontradas = todasQuestoes.filter(q => q.habilidade_bncc.toUpperCase().includes(habilidade));
+  
+  if (questoesEncontradas.length === 0) {
+      resultadosDiv.innerHTML = '<p>Nenhuma questão encontrada para esta habilidade.</p>';
+      return;
+  }
+  
+  let htmlResultados = `<h3>${questoesEncontradas.length} Questões Encontradas:</h3>`;
+  questoesEncontradas.forEach((q, index) => {
+      const imgHtml = q.imagem ? `<img src="${q.imagem}" alt="Imagem da questão"/>` : '';
+      htmlResultados += `
+        <div class="bloco-assunto">
+          <h4>${q.disciplina} | ${q.area} | ${q.assunto}</h4>
+          <p>${q.pergunta}</p>
+          ${imgHtml}
+          <div class="materiais">
+            <button class="material-btn quiz-btn" onclick="iniciarQuiz([todasQuestoes.find(item => item.codigo === '${q.codigo}')])">
+              Fazer Quiz
+            </button>
+          </div>
+        </div>
+      `;
+  });
+  resultadosDiv.innerHTML = htmlResultados;
+  if (window.MathJax) {
+    MathJax.typesetPromise();
+  }
+}
+
+/* =================== FUNÇÕES DE VISUALIZAÇÃO DO QUIZ =================== */
+function mostrarQuestao(){
+  const q = questoesSelecionadas[indiceQuestao];
+  document.getElementById("cabecalho1").textContent = `Código: ${q.codigo} | ${q.disciplina} | ${q.area}`;
+  document.getElementById("cabecalho2").textContent = `Ano: ${q.ano} | Banca/Órgão: ${q.banca} | ${q.orgao} | Prova: ${q.prova}`;
+  const perguntaEl = document.getElementById("pergunta");
+  perguntaEl.innerHTML = q.pergunta;
+  const img = document.getElementById("imagemQuestao");
+  if(q.imagem){ img.src=q.imagem; img.style.display="block"; }
+  else { img.style.display="none"; }
+  const letras=["A","B","C","D"];
+  const altHtml = q.alternativas.map((alt,i)=>
+    `<div class="alternativa" onclick="selecionarAlternativa(${i})" role="button" tabindex="0">
+       <span class="letra">${letras[i]}</span> ${alt}
+     </div>`).join("");
+  document.getElementById("alternativas").innerHTML = altHtml;
+  document.getElementById("mensagem").innerHTML = "";
+  respostaSelecionada = null;
+  document.getElementById("confirmarBtn").style.display="inline-block";
+  document.getElementById("proximaBtn").style.display="none";
+  atualizarBarraProgresso();
+  if (window.MathJax) { MathJax.typesetPromise([perguntaEl]); }
+}
+
+function selecionarAlternativa(i){
+  document.querySelectorAll(".alternativa").forEach(el=>el.classList.remove("selecionada"));
+  const lista = document.querySelectorAll(".alternativa");
+  if(!lista[i]) return;
+  lista[i].classList.add("selecionada");
+  respostaSelecionada = i;
+}
+
+function confirmarResposta(){
+  if(respostaSelecionada===null){
+    alert("Selecione uma alternativa antes de confirmar.");
+    return;
+  }
+  const q = questoesSelecionadas[indiceQuestao];
+  const correta = q.correta;
+  if(respostaSelecionada===correta){
+    document.getElementById("mensagem").innerHTML = `<span class="msg-acerto">✅ Muito bem! Você acertou.</span><span id="particles">🎉</span>`;
+    somAcerto();
+    acertos++;
+  } else {
+    const textoCorreto = q.alternativas[correta];
+    document.getElementById("mensagem").innerHTML = `<span class="msg-erro">❌ Não foi dessa vez. Correta: ${textoCorreto}</span>`;
+    somErro();
+  }
+  document.getElementById("confirmarBtn").style.display="none";
+  document.getElementById("proximaBtn").style.display="inline-block";
+}
+
+function proximaQuestao(){
+  indiceQuestao++;
+  if(indiceQuestao < questoesSelecionadas.length){
+    mostrarQuestao();
+  } else {
+    const total = questoesSelecionadas.length;
+    document.getElementById("pergunta").textContent = `🎉 Teste finalizado! Você acertou ${acertos} de ${total} questões.`;
+    document.getElementById("imagemQuestao").style.display="none";
+    document.getElementById("alternativas").innerHTML = "";
+    document.getElementById("mensagem").innerHTML = "";
+    document.getElementById("confirmarBtn").style.display="none";
+    document.getElementById("proximaBtn").style.display="none";
+    document.getElementById("reiniciarBtn").style.display="inline-block";
+    atualizarBarraProgresso(100);
+  }
+}
+
+function reiniciarQuiz(){
+  const quizCard = document.getElementById("quizCard");
+  quizCard.style.display="none";
+  const conteudoArea = document.querySelector('.conteudo-area');
+  if (conteudoArea) {
+    conteudoArea.style.display = "block";
+  }
+  const resultados = document.getElementById("resultados");
+  if (resultados) {
+    resultados.innerHTML = "";
+  }
+  acertos = 0;
+  indiceQuestao = 0;
+  respostaSelecionada = null;
+  atualizarBarraProgresso(0);
+}
+
+/* =================== UTIL =================== */
+function embaralhar(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+function atualizarBarraProgresso(forcarPct){
+  const el = document.getElementById("barraProgresso");
+  const total = questoesSelecionadas.length;
+  const pct = (typeof forcarPct === "number") ? forcarPct : (total ? Math.round((indiceQuestao/total)*100) : 0);
+  el.style.width = pct + "%";
+}
+document.addEventListener("keydown", (e)=>{
+  if(e.key==="Enter"){
+    const foco = document.activeElement;
+    if(foco && foco.classList.contains("alternativa")){
+      const idx = Array.from(document.querySelectorAll(".alternativa")).indexOf(foco);
+      if(idx>=0) selecionarAlternativa(idx);
+    }
+  }
+});
