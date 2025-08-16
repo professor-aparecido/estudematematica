@@ -49,7 +49,7 @@ body {
 .topbar {
   background: var(--azul);
   color: #fff;
-  padding: 0 20px;
+  padding: 20px 0px;
   box-shadow: var(--sombra);
 }
 
