@@ -38,7 +38,7 @@ body {
 }
 
 .main {
-  padding: 20px; ---*/ alteração 1
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,8 +123,8 @@ body {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
-  padding: 10px;  ---*/ alteração 2
-  margin-bottom: 5px; ---*/ alteração 3
+  padding: 25px;
+  margin-bottom: 25px;
 }
 
 .quiz-container {
@@ -147,7 +147,7 @@ body {
 #pergunta {
   font-size: 20px;
   border-top: 1px solid var(--fundo-secundario);
-  padding-top: 10px;  ---*/ alteração 4
+  padding-top: 20px;
   margin-top: 5px; 
 }
 
@@ -155,7 +155,7 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  margin-bottom: 10px;  ---*/ alteração 5
+  margin-bottom: 20px;
 }
 
 /* --- PROGRESSO --- */
@@ -163,7 +163,7 @@ body {
   background: var(--fundo-secundario);
   border-radius: 10px;
   height: 10px;
-  margin-bottom: 0;  ---*/ alteração 6
+  margin-bottom: 30px;
   overflow: hidden;
 }
 
