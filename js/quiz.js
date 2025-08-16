@@ -1,5 +1,5 @@
 /* =================== ESTADO =================== */
-const TOTAL_POR_TENTATIVA = 10; // Valor fixo para 10 questões
+const TOTAL_POR_TENTATIVA = 4; // Valor fixo para 4 questões
 let questoesSelecionadas = [];
 let indiceQuestao = 0;
 let respostaSelecionada = null;
@@ -76,7 +76,6 @@ async function carregarTodasQuestoes(){
 }
 
 /* =================== FUNÇÕES DE INÍCIO DO QUIZ =================== */
-// A função não precisa mais do parâmetro 'numQuestoes'
 function iniciarQuiz(pool){
   acertos = 0;
   indiceQuestao = 0;
