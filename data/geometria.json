@@ -1,0 +1,62 @@
+[
+  {
+    "codigo": "GEO-001",
+    "disciplina": "Matemática",
+    "area": "Geometria",
+    "assunto": "Triângulos",
+    "habilidade_bncc": "EF09MA13",
+    "ano": "2023",
+    "banca": "Banca X",
+    "orgao": "Orgão Y",
+    "prova": "Prova A",
+    "pergunta": "A soma dos ângulos internos de um triângulo é:",
+    "imagem": "",
+    "alternativas": ["180°", "90°", "270°", "360°"],
+    "correta": 0
+  },
+  {
+    "codigo": "GEO-002",
+    "disciplina": "Matemática",
+    "area": "Geometria",
+    "assunto": "Área e Perímetro",
+    "habilidade_bncc": "EF06MA24",
+    "ano": "2022",
+    "banca": "Banca X",
+    "orgao": "Orgão Z",
+    "prova": "Prova B",
+    "pergunta": "Qual é o perímetro de um quadrado de lado 5 cm?",
+    "imagem": "",
+    "alternativas": ["10 cm", "15 cm", "20 cm", "25 cm"],
+    "correta": 2
+  },
+  {
+    "codigo": "GEO-003",
+    "disciplina": "Matemática",
+    "area": "Geometria",
+    "assunto": "Figuras Geométricas Planas",
+    "habilidade_bncc": "EF04MA17",
+    "ano": "2021",
+    "banca": "Banca Y",
+    "orgao": "Orgão T",
+    "prova": "Prova C",
+    "pergunta": "Identifique a figura:",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Equilateral_triangle.svg/240px-Equilateral_triangle.svg.png",
+    "alternativas": ["Círculo", "Triângulo equilátero", "Retângulo", "Trapézio"],
+    "correta": 1
+  },
+  {
+    "codigo": "GEO-004",
+    "disciplina": "Matemática",
+    "area": "Geometria",
+    "assunto": "Área e Perímetro",
+    "habilidade_bncc": "EF05MA19",
+    "ano": "2020",
+    "banca": "Banca Z",
+    "orgao": "Orgão R",
+    "prova": "Prova D",
+    "pergunta": "Um retângulo tem base 8 e altura 3. Sua área é:",
+    "imagem": "",
+    "alternativas": ["11", "22", "24", "26"],
+    "correta": 2
+  }
+]

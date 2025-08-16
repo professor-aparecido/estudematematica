@@ -1,0 +1,62 @@
+[
+  {
+    "codigo": "GM-001",
+    "disciplina": "Matemática",
+    "area": "Grandezas e Medidas",
+    "assunto": "Unidades de Volume e Capacidade",
+    "habilidade_bncc": "EF07MA33",
+    "ano": "2023",
+    "banca": "Banca X",
+    "orgao": "Orgão Y",
+    "prova": "Prova A",
+    "pergunta": "Converta 500 mL para litros.",
+    "imagem": "",
+    "alternativas": ["0,05 L", "0,5 L", "5 L", "50 L"],
+    "correta": 1
+  },
+  {
+    "codigo": "GM-002",
+    "disciplina": "Matemática",
+    "area": "Grandezas e Medidas",
+    "assunto": "Unidades de Comprimento",
+    "habilidade_bncc": "EF06MA25",
+    "ano": "2022",
+    "banca": "Banca X",
+    "orgao": "Orgão Z",
+    "prova": "Prova B",
+    "pergunta": "Quantos metros há em 3 km?",
+    "imagem": "",
+    "alternativas": ["300", "3000", "30", "0,3"],
+    "correta": 1
+  },
+  {
+    "codigo": "GM-003",
+    "disciplina": "Matemática",
+    "area": "Grandezas e Medidas",
+    "assunto": "Medidas de Tempo",
+    "habilidade_bncc": "EF05MA20",
+    "ano": "2021",
+    "banca": "Banca Y",
+    "orgao": "Orgão T",
+    "prova": "Prova C",
+    "pergunta": "1 hora e 30 minutos correspondem a quantos minutos?",
+    "imagem": "",
+    "alternativas": ["60", "75", "90", "120"],
+    "correta": 2
+  },
+  {
+    "codigo": "GM-004",
+    "disciplina": "Matemática",
+    "area": "Grandezas e Medidas",
+    "assunto": "Unidades de Volume e Capacidade",
+    "habilidade_bncc": "EF07MA33",
+    "ano": "2020",
+    "banca": "Banca Z",
+    "orgao": "Orgão R",
+    "prova": "Prova D",
+    "pergunta": "Um recipiente comporta 2,5 L. Isso equivale a quantos mL?",
+    "imagem": "",
+    "alternativas": ["250 mL", "2.500 mL", "25 mL", "250.000 mL"],
+    "correta": 1
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "codigo": "NO-001",
+    "disciplina": "Matemática",
+    "area": "Números e Operações",
+    "assunto": "Porcentagem",
+    "habilidade_bncc": "EF06MA13",
+    "ano": "2025",
+    "banca": "VUNESP",
+    "orgao": "Pref. Itapevi/SP",
+    "prova": "Agente de Serviços - Fundamental",
+    "pergunta": "Dos 180 mL de um produto químico industrial, 25% são solventes, e destes, 20% são álcool. O volume de álcool nesse produto corresponde, então, a",
+    "imagem": "",
+    "alternativas": ["9mL.", "12mL.", "18mL.", "24mL."],
+    "correta": 0
+  },
+  {
+    "codigo": "NO-002",
+    "disciplina": "Matemática",
+    "area": "Números e Operações",
+    "assunto": "Média Aritmética",
+    "habilidade_bncc": "EF06MA24",
+    "ano": "2022",
+    "banca": "VUNESP",
+    "orgao": "Pref. Itatiba/SP",
+    "prova": "Almoxarife - Fundamental",
+    "pergunta": "Durante uma campanha de conscientização ambiental, 50 pessoas fizeram contribuições para organizações não governamentais (ONG) atuantes na defesa do meio ambiente; 20 dessas pessoas doaram R$ 1.500,00, e as demais, R$ 1.800,00. O valor total foi então recolhido e repartido, em partes iguais, entre 3 ONG, cada uma das quais recebeu, portanto,",
+    "imagem": "",
+    "alternativas": ["R$ 24.000,00.", "R$ 25.000,00.", "R$ 26.000,00.", "R$ 28.000,00."],
+    "correta": 3
+  },
+  {
+    "codigo": "NO-003",
+    "disciplina": "Matemática",
+    "area": "Números e Operações",
+    "assunto": "Operações Fundamentais",
+    "habilidade_bncc": "EF04MA03",
+    "ano": "2021",
+    "banca": "Banca Y",
+    "orgao": "Orgão T",
+    "prova": "Prova C",
+    "pergunta": "O dobro de 9 somado a 4 é:",
+    "imagem": "",
+    "alternativas": ["18", "20", "22", "24"],
+    "correta": 2
+  },
+  {
+    "codigo": "NO-004",
+    "disciplina": "Matemática",
+    "area": "Números e Operações",
+    "assunto": "Operações Fundamentais",
+    "habilidade_bncc": "EF03MA07",
+    "ano": "2020",
+    "banca": "Banca Z",
+    "orgao": "Orgão R",
+    "prova": "Prova D",
+    "pergunta": "Qual é o resultado de 45 ÷ 5?",
+    "imagem": "",
+    "alternativas": ["5", "7", "8", "9"],
+    "correta": 3
+  }
+]
