@@ -121,6 +121,11 @@ function iniciarQuiz(pool){
 
   atualizarBarraProgresso();
   mostrarQuestao();
+  
+  // Garante que o MathJax seja renderizado no início do quiz
+  if (window.MathJax) {
+    MathJax.typesetPromise([document.getElementById("quizCard")]);
+  }
 }
 
 async function iniciarQuizPorAssunto(area, assunto){
@@ -284,8 +289,10 @@ function mostrarGabarito() {
   quizCard.innerHTML += `<div class="botoes"><button id="reiniciarBtn" onclick="reiniciarQuiz()">Reiniciar</button></div>`;
   document.getElementById("reiniciarBtn").style.display = "inline-block";
   atualizarBarraProgresso(100);
+
+  // Renderiza o LaTeX no novo conteúdo do gabarito
   if (window.MathJax) {
-    MathJax.typesetPromise();
+    MathJax.typesetPromise([quizCard]);
   }
 }
 
