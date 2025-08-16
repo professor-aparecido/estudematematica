@@ -8,7 +8,7 @@
   --texto-secundario: #757575; /* Cinza médio */
   --sombra: 0 4px 12px rgba(0, 0, 0, 0.05); 
   --verde: #4caf50; /* Verde acerto */
-  --azul: #1a237e; /* Azul principal */
+  --azul: #2196f3; /* Azul principal */
   --laranja: #ff7043;
   --acerto: #4caf50;
   --erro: #f44336;
@@ -34,7 +34,7 @@ body {
   padding: 0;
   background-color: var(--fundo-secundario);
   color: var(--texto-principal);
-  line-height: 1;
+  line-height: 1.5;
 }
 
 .main {
@@ -123,8 +123,8 @@ body {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
-  padding: 5px 25px;
-  margin-bottom: 5px;
+  padding: 25px 5px;
+  margin-bottom: 25px;
 }
 
 .quiz-container {
@@ -163,7 +163,7 @@ body {
   background: var(--fundo-secundario);
   border-radius: 10px;
   height: 10px;
-  margin-bottom: 0;
+  margin-bottom: 30px;
   overflow: hidden;
 }
 
