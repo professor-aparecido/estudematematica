@@ -1,61 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Buscar por BNCC | Quiz do Professor Aparecido</title>
-    <link rel="stylesheet" href="css/style.css">
-    
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]'], ['$$', '$$']] } };
-    </script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Buscar por BNCC | Quiz do Professor Aparecido</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]'], ['$$', '$$']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
 <header class="topbar">
-  <div class="topbar-inner">
-    <h1>Buscar por Habilidade BNCC</h1>
-    <a href="index.html" class="btn-voltar">Voltar</a>
-  </div>
+  <div class="topbar-inner">
+    <h1>Buscar por Habilidade BNCC</h1>
+    <a href="index.html" class="btn-voltar">Voltar</a>
+  </div>
 </header>
 
 <main class="main">
 
-  <section class="conteudo-area">
-    <div class="bloco-busca">
-      <h2>Encontre questões por Habilidade BNCC</h2>
-      <p>Digite o código da habilidade (ex: EF07MA33) para encontrar questões relacionadas.</p>
-      <div class="busca-input-wrap">
-        <input type="text" id="inputHabilidade" placeholder="Ex: EF07MA33">
-        <button onclick="buscarHabilidade()">Buscar</button>
-      </div>
-      
-      <div id="resultados">
-        </div>
-    </div>
-  </section>
+  <section class="conteudo-area">
+    <div class="bloco-busca">
+      <h2>Encontre questões por Habilidade BNCC</h2>
+      <p>Digite o código da habilidade (ex: EF07MA33) para encontrar questões relacionadas.</p>
+      <div class="busca-input-wrap">
+        <input type="text" id="inputHabilidade" placeholder="Ex: EF07MA33">
+        <button onclick="buscarHabilidade()">Buscar</button>
+      </div>
+      
+      <div id="resultados">
+        </div>
+    </div>
+  </section>
 
-  <section class="quiz-container" id="quizCard" aria-live="polite" style="display:none;">
-    <div class="pergunta-card">
-      <div class="progresso">
-        <div id="barraProgresso"></div>
-      </div>
-      <h2 id="cabecalho1"></h2>
-      <p id="cabecalho2" class="dados-prova"></p>
-      <h3 id="pergunta"></h3>
-      <img id="imagemQuestao" src="" alt="Imagem da questão" style="display:none;">
-      <div id="alternativas" class="alternativas-lista"></div>
-    </div>
-    <div id="mensagem" aria-live="assertive"></div>
-    <div class="botoes">
-      <button id="confirmarBtn" onclick="confirmarResposta()">Confirmar</button>
-      <button id="proximaBtn" onclick="proximaQuestao()">Próxima</button>
-      <button id="reiniciarBtn" onclick="reiniciarQuiz()">Reiniciar</button>
-    </div>
-  </section>
-  <div class="footer">© 2025 • Quiz didático para estudos</div>
+  <div id="quizCard" class="quiz-container" style="display:none;">
+      </div>
+
+  <div class="footer">© 2025 • Quiz didático para estudos</div>
 </main>
 
 <script src="js/quiz.js"></script>
