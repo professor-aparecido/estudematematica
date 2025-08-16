@@ -90,14 +90,34 @@ function iniciarQuiz(pool){
       return;
   }
 
-  document.getElementById("quizCard").style.display="block";
-  document.getElementById("reiniciarBtn").style.display="none";
-  document.getElementById("mensagem").innerHTML = "";
+  const quizCard = document.getElementById("quizCard");
+  quizCard.style.display="block";
+  quizCard.innerHTML = `
+    <div class="pergunta-card">
+      <div class="progresso">
+        <div id="barraProgresso"></div>
+      </div>
+      <h2 id="cabecalho1"></h2>
+      <p id="cabecalho2" class="dados-prova"></p>
+      <h3 id="pergunta"></h3>
+      <img id="imagemQuestao" src="" alt="Imagem da questão" style="display:none;">
+      <div id="alternativas" class="alternativas-lista"></div>
+    </div>
+    <div id="mensagem" aria-live="assertive"></div>
+    <div class="botoes">
+      <button id="confirmarBtn" onclick="confirmarResposta()">Confirmar</button>
+      <button id="proximaBtn" onclick="proximaQuestao()">Próxima</button>
+      <button id="reiniciarBtn" onclick="reiniciarQuiz()">Reiniciar</button>
+    </div>
+  `;
 
   const conteudoArea = document.querySelector('.conteudo-area');
   if (conteudoArea) {
     conteudoArea.style.display = "none";
   }
+
+  document.getElementById("reiniciarBtn").style.display="none";
+  document.getElementById("mensagem").innerHTML = "";
 
   atualizarBarraProgresso();
   mostrarQuestao();
@@ -272,6 +292,27 @@ function mostrarGabarito() {
 function reiniciarQuiz(){
   const quizCard = document.getElementById("quizCard");
   quizCard.style.display="none";
+  
+  // Re-cria a estrutura HTML do quiz para a próxima partida
+  quizCard.innerHTML = `
+    <div class="pergunta-card">
+      <div class="progresso">
+        <div id="barraProgresso"></div>
+      </div>
+      <h2 id="cabecalho1"></h2>
+      <p id="cabecalho2" class="dados-prova"></p>
+      <h3 id="pergunta"></h3>
+      <img id="imagemQuestao" src="" alt="Imagem da questão" style="display:none;">
+      <div id="alternativas" class="alternativas-lista"></div>
+    </div>
+    <div id="mensagem" aria-live="assertive"></div>
+    <div class="botoes">
+      <button id="confirmarBtn" onclick="confirmarResposta()">Confirmar</button>
+      <button id="proximaBtn" onclick="proximaQuestao()">Próxima</button>
+      <button id="reiniciarBtn" onclick="reiniciarQuiz()">Reiniciar</button>
+    </div>
+  `;
+
   const conteudoArea = document.querySelector('.conteudo-area');
   if (conteudoArea) {
     conteudoArea.style.display = "block";
