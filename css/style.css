@@ -1,3 +1,4 @@
+/* =================== VARIÁVEIS DE CORES =================== */
 :root {
   --fundo-principal: #f0f2f5;
   --fundo-secundario: #e6e8eb;
@@ -5,17 +6,26 @@
   --texto-secundario: #666;
   --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
   --verde: #2d882d;
-  --azul: #1877f2;
+  --azul: #4A90E2; /* Cor principal, atualizada */
   --laranja: #f38630;
   --acerto: #2e7d32;
   --erro: #c62828;
   --badge: #007bff;
+
+  /* Novas cores adicionadas */
+  --azul-claro: #E8F2FC;
+  --azul-escuro: #3567a5;
+  --cinza-claro: #f7f7f7;
+  --cinza-medio: #e0e0e0;
+  --cinza-escuro: #333;
 }
 
-/* Base e Layout */
+/* =================== ESTILOS GLOBAIS E TIPOGRAFIA =================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 * {
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,9 +35,18 @@ body {
   padding: 0;
   background-color: var(--fundo-principal);
   color: var(--texto-principal);
-  line-height: 1.6;
+  line-height: 1.4; /* Espaçamento de linha ajustado */
 }
 
+.main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+/* =================== ESTILO DO CABEÇALHO (TOPBAR) =================== */
 .topbar {
   background: var(--azul);
   color: #fff;
@@ -49,6 +68,28 @@ body {
   font-size: 24px;
 }
 
+/* =================== ESTILO DOS BOTÕES GERAIS =================== */
+.btn-voltar,
+.material-btn,
+.quiz-btn,
+#confirmarBtn,
+#proximaBtn,
+#reiniciarBtn,
+.bloco-busca button {
+  background-color: var(--azul);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px; /* Botões arredondados */
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
 .btn-voltar {
   background: #fff;
   color: var(--azul);
@@ -56,7 +97,6 @@ body {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-voltar:hover {
@@ -64,25 +104,79 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.main {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: calc(100vh - 80px);
+.bloco-busca button:hover,
+.material-btn:hover,
+.quiz-btn:hover {
+  background-color: var(--azul-escuro);
 }
 
-/* Estilo do Quiz */
-.quiz-container {
+#confirmarBtn {
+  background: var(--verde);
+}
+
+#proximaBtn {
+  background: var(--azul);
+  display: none;
+}
+
+#reiniciarBtn {
+  background: var(--laranja);
+  display: none;
+}
+
+/* =================== ESTILOS DAS ÁREAS DE CONTEÚDO E QUIZ =================== */
+.quiz-container, .bloco-gabarito, .bloco-assunto, .bloco-busca, .areaBtn {
   background: #fff;
   border-radius: 12px;
-  padding: 30px;
-  max-width: 800px;
-  width: 100%;
-  box-shadow: var(--sombra);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
+  padding: 20px;
   margin-bottom: 20px;
 }
 
+.quiz-container {
+  padding: 30px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.bloco-assunto, .bloco-busca, .bloco-gabarito {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.bloco-assunto:hover, .bloco-busca:hover {
+  transform: translateY(-2px);
+}
+
+.pergunta-card h2 {
+  font-size: 18px;
+  color: var(--texto-secundario);
+  margin: 0 0 10px;
+}
+
+.pergunta-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Estilo para a Pergunta Específica */
+#pergunta {
+  font-size: 20px; /* Fonte da pergunta menor */
+  border-top: 1px solid var(--cinza-medio); /* Linha horizontal */
+  padding-top: 15px; 
+  margin-top: 25px;
+}
+
+.pergunta-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* =================== PROGRESSO =================== */
 .progresso {
   background: var(--fundo-secundario);
   border-radius: 10px;
@@ -99,26 +193,7 @@ body {
   transition: width 0.4s ease-in-out;
 }
 
-.pergunta-card h2 {
-  font-size: 18px;
-  color: var(--texto-secundario);
-  margin: 0 0 10px;
-}
-
-.pergunta-card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.pergunta-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-/* Alternativas */
+/* =================== ALTERNATIVAS =================== */
 .alternativas-lista {
   list-style: none;
   padding: 0;
@@ -161,45 +236,7 @@ body {
   background-color: #fff;
 }
 
-/* Botões */
-.botoes {
-  margin-top: 14px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-button {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-button:hover {
-  transform: translateY(-2px);
-}
-
-#confirmarBtn {
-  background: var(--verde);
-  color: #fff;
-}
-
-#proximaBtn {
-  background: var(--azul);
-  color: #fff;
-  display: none;
-}
-
-#reiniciarBtn {
-  background: var(--laranja);
-  color: #fff;
-  display: none;
-}
-
-/* Mensagens */
+/* =================== MENSAGENS E GABARITO =================== */
 #mensagem {
   font-weight: 700;
   display: flex;
@@ -214,30 +251,6 @@ button:hover {
 
 .msg-erro {
   color: var(--erro);
-}
-
-#particles {
-  display: inline-block;
-}
-
-/* Gabarito */
-.bloco-gabarito {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
-  margin-bottom: 20px;
-}
-
-.bloco-gabarito h3 {
-  font-size: 18px;
-  margin-top: 0;
-  color: var(--azul);
-}
-
-.bloco-gabarito p {
-  color: var(--texto-secundario);
-  margin: 0 0 15px;
 }
 
 .gabarito-respostas ul {
@@ -268,7 +281,7 @@ button:hover {
   font-weight: bold;
 }
 
-/* Botões da Tela Inicial e Áreas */
+/* =================== PÁGINA INICIAL E BUSCA =================== */
 #telaInicial {
   display: flex;
   flex-wrap: wrap;
@@ -286,11 +299,8 @@ button:hover {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  background-color: #fff;
-  border-radius: 12px;
   padding: 25px;
   width: calc(33.333% - 14px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   color: var(--texto-principal);
   font-size: 18px;
   font-weight: bold;
@@ -310,14 +320,6 @@ button:hover {
 .conteudo-area {
   max-width: 800px;
   width: 100%;
-}
-
-.bloco-assunto {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
-  margin-bottom: 20px;
 }
 
 .bloco-assunto h2 {
@@ -349,16 +351,6 @@ button:hover {
   color: #fff;
 }
 
-/* Busca por BNCC */
-.bloco-busca {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
-  margin-bottom: 20px;
-  width: 100%;
-}
-
 .busca-input-wrap {
   display: flex;
   gap: 10px;
@@ -367,132 +359,6 @@ button:hover {
 
 .busca-input-wrap input {
   flex: 1;
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.busca-input-wrap button {
-  background: var(--azul);
-  color: #fff;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#resultados .bloco-assunto {
-  background-color: #f7f7f7;
-  border-left: 5px solid var(--badge);
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  transition: transform 0.2s;
-}
-
-#resultados .bloco-assunto:hover {
-  transform: translateY(-2px);
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 20px;
-  color: var(--texto-secundario);
-  font-size: 14px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .areaBtn {
-    width: calc(50% - 10px);
-  }
-}
-
-@media (max-width: 480px) {
-  .areaBtn {
-    width: 100%;
-  }
-
-  .botoes {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .botoes button {
-    width: 100%;
-  }
-}
-
-/* =================== ESTILOS ADICIONAIS PARA MELHORAR O VISUAL =================== */
-
-/* --- Fontes e Tipografia --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  color: var(--cinza-escuro);
-}
-
-/* --- Cores e Paleta --- */
-:root {
-  --azul: #4A90E2;
-  --azul-claro: #E8F2FC;
-  --azul-escuro: #3567a5;
-  --cinza-claro: #f7f7f7;
-  --cinza-medio: #e0e0e0;
-  --cinza-escuro: #333;
-}
-
-/* --- Layout e Espaçamento --- */
-.bloco-busca,
-.bloco-assunto,
-.bloco-gabarito {
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-}
-
-.bloco-busca:hover,
-.bloco-assunto:hover {
-  transform: translateY(-2px);
-}
-
-.main {
-  padding: 20px;
-}
-
-/* --- Estilo dos Botões --- */
-.btn-voltar,
-.material-btn,
-.quiz-btn,
-#confirmarBtn,
-#proximaBtn,
-#reiniciarBtn,
-.bloco-busca button,
-.bloco-gabarito button {
-  background-color: var(--azul);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 50px;
-  transition: background-color 0.3s ease, transform 0.1s ease;
-}
-
-.bloco-busca button:hover,
-.material-btn:hover,
-.quiz-btn:hover {
-  background-color: var(--azul-escuro);
-}
-
-.busca-input-wrap input[type="text"] {
   padding: 10px;
   border: 1px solid var(--cinza-medio);
   border-radius: 50px;
@@ -518,21 +384,52 @@ body {
 .habilidades-lista li strong {
   color: var(--azul-escuro);
 }
-/* --- Ajustes Visuais do Quiz --- */
 
-/* 1. Espaço entre as linhas */
-body {
-  /* Altera a altura da linha para um valor um pouco mais compacto */
-  line-height: 1.4; 
+#resultados .bloco-assunto {
+  background-color: #f7f7f7;
+  border-left: 5px solid var(--badge);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  transition: transform 0.2s;
 }
 
-/* 2. Linha horizontal e tamanho da fonte da pergunta */
-#pergunta {
-  /* Adiciona uma linha superior com um pouco de espaçamento */
-  border-top: 1px solid var(--cinza-medio);
-  padding-top: 15px; 
-  margin-top: 25px;
+#resultados .bloco-assunto:hover {
+  transform: translateY(-2px);
+}
 
-  /* Reduz o tamanho da fonte da pergunta */
-  font-size: 20px; 
+/* =================== FOOTER =================== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--texto-secundario);
+  font-size: 14px;
+}
+
+/* =================== RESPONSIVIDADE =================== */
+@media (max-width: 768px) {
+  .areaBtn {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .areaBtn {
+    width: 100%;
+  }
+
+  .botoes {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .botoes button {
+    width: 100%;
+  }
+
+  .topbar-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
 }
