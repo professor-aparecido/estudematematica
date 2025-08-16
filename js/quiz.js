@@ -186,7 +186,10 @@ function mostrarTodasHabilidades() {
   
   let htmlResultados = `<h3>Habilidades Encontradas:</h3>`;
   htmlResultados += `<ul>`;
-
+  
+// Apenas esta linha foi alterada para incluir a classe
+  htmlResultados += `<ul class="habilidades-lista">`;
+  
   habilidadesOrdenadas.forEach(habilidade => {
     htmlResultados += `
       <li>
