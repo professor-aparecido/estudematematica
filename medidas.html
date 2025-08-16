@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Grandezas e Medidas | Quiz do Professor Aparecido</title>
+    <title>Geometria | Quiz do Professor Aparecido</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -15,7 +15,7 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <h1>Grandezas e Medidas</h1>
+    <h1>Geometria</h1>
     <a href="index.html" class="btn-voltar">Voltar</a>
   </div>
 </header>
@@ -24,43 +24,61 @@
 
   <section class="conteudo-area">
     <div class="bloco-assunto">
-      <h2>Unidades de Volume e Capacidade</h2>
-      <p>Estude as conversões entre litros, mililitros, metros cúbicos e outras unidades.</p>
+      <h2>Triângulos</h2>
+      <p>Material sobre a classificação e propriedades de triângulos, incluindo a soma dos ângulos internos.</p>
       <div class="materiais">
         <button class="material-btn">Material Teórico</button>
         <button class="material-btn">Videoaulas</button>
-        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Grandezas e Medidas', 'Unidades de Volume e Capacidade')">
+        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Geometria', 'Triângulos')">
           Quiz
         </button>
       </div>
     </div>
     
     <div class="bloco-assunto">
-      <h2>Unidades de Comprimento</h2>
-      <p>Aprenda a converter entre quilômetros, metros, centímetros e outras medidas.</p>
+      <h2>Área e Perímetro</h2>
+      <p>Aprenda a calcular a área e o perímetro de figuras planas como quadrados, retângulos e círculos.</p>
       <div class="materiais">
         <button class="material-btn">Material Teórico</button>
         <button class="material-btn">Videoaulas</button>
-        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Grandezas e Medidas', 'Unidades de Comprimento')">
+        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Geometria', 'Área e Perímetro')">
           Quiz
         </button>
       </div>
     </div>
     
     <div class="bloco-assunto">
-      <h2>Medidas de Tempo</h2>
-      <p>Pratique a conversão de horas para minutos e segundos, e resolva problemas de tempo.</p>
+      <h2>Figuras Geométricas Planas</h2>
+      <p>Identifique e entenda as características de diferentes formas geométricas.</p>
       <div class="materiais">
         <button class="material-btn">Material Teórico</button>
         <button class="material-btn">Videoaulas</button>
-        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Grandezas e Medidas', 'Medidas de Tempo')">
+        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Geometria', 'Figuras Geométricas Planas')">
           Quiz
         </button>
       </div>
     </div>
   </section>
 
-  <section class="quiz-container" id="quizCard" aria-live="polite" style="display:none;"></section>
+  <section class="quiz-container" id="quizCard" aria-live="polite" style="display:none;">
+    <div class="pergunta-card">
+      <div class="progresso">
+        <div id="barraProgresso"></div>
+      </div>
+      <h2 id="cabecalho1"></h2>
+      <p id="cabecalho2" class="dados-prova"></p>
+      <h3 id="pergunta"></h3>
+      <img id="imagemQuestao" src="" alt="Imagem da questão" style="display:none;">
+      <div id="alternativas" class="alternativas-lista"></div>
+    </div>
+    <div id="mensagem" aria-live="assertive"></div>
+    <div class="botoes">
+      <button id="confirmarBtn" onclick="confirmarResposta()">Confirmar</button>
+      <button id="proximaBtn" onclick="proximaQuestao()">Próxima</button>
+      <button id="reiniciarBtn" onclick="reiniciarQuiz()">Reiniciar</button>
+    </div>
+  </section>
+
   <div class="footer">© 2025 • Quiz didático para estudos</div>
 </main>
 
