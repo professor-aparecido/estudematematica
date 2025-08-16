@@ -1,26 +1,26 @@
-/* =================== TEMA 2: AZUL SERENO COM TOQUE DE CINZA =================== */
+/* =================== TEMA 1: AZUL CLÁSSICO E ELEGANTE =================== */
 
 /* --- VARIÁVEIS DE CORES --- */
 :root {
-  --fundo-principal: #f4f7f9; /* Fundo azul-claro */
-  --fundo-secundario: #e9eff2; /* Cinza-azulado claro */
-  --texto-principal: #34495e; /* Azul marinho escuro */
-  --texto-secundario: #7f8c8d; /* Cinza médio */
+  --fundo-principal: #fefefe; /* Fundo branco-gelo */
+  --fundo-secundario: #f5f5f5; /* Cinza bem claro */
+  --texto-principal: #212121; /* Cinza escuro */
+  --texto-secundario: #757575; /* Cinza médio */
   --sombra: 0 4px 12px rgba(0, 0, 0, 0.05); 
-  --verde: #599748; /* Verde acerto */
-  --azul: #51a3a3; /* Azul principal */
-  --laranja: #f38630;
-  --acerto: #599748;
-  --erro: #c04938;
-  --badge: #51a3a3;
+  --verde: #4caf50; /* Verde acerto */
+  --azul: #1a237e; /* Azul principal */
+  --laranja: #ff7043;
+  --acerto: #4caf50;
+  --erro: #f44336;
+  --badge: #2196f3;
 
   /* Cores para o Efeito de Hover */
-  --hover-fundo: #51a3a3; /* Azul-piscina */
+  --hover-fundo: #1a237e; /* Azul Escuro */
   --hover-texto: #fff; /* Texto Branco */
 }
 
 /* --- ESTILOS GLOBAIS E TIPOGRAFIA --- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -32,7 +32,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--fundo-principal);
+  background-color: var(--fundo-secundario);
   color: var(--texto-principal);
   line-height: 1.5;
 }
@@ -85,9 +85,9 @@ body {
 }
 
 .material-btn:hover, .quiz-btn:hover, .bloco-busca button:hover {
-  background-color: #438f8f;
+  background-color: #1976d2;
   transform: translateY(-2px);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .btn-voltar {
@@ -97,7 +97,7 @@ body {
 }
 
 .btn-voltar:hover {
-  background-color: #dbe0d9;
+  background-color: #e0e0e0;
 }
 
 #confirmarBtn {
@@ -105,7 +105,7 @@ body {
 }
 
 #confirmarBtn:hover {
-  background-color: #4a823c;
+  background-color: #43a047;
 }
 
 #proximaBtn {
@@ -188,13 +188,13 @@ body {
 }
 
 .alternativa:hover, .alternativa.selecionada {
-  background: #e0e6e9;
+  background: #e0e0e0;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .alternativa.selecionada {
-  background: #d1d9e2;
+  background: #bbdefb;
   box-shadow: inset 0 0 0 2px var(--azul);
 }
 
