@@ -85,7 +85,7 @@ function iniciarQuiz(pool){
   
   if (questoesSelecionadas.length === 0) {
       alert("Nenhuma questão encontrada para a seleção. Verifique o console para mais detalhes.");
-      console.error("Pool de questões vazio para a seleção:", pool); // Linha de depuração
+      console.error("Pool de questões vazio para a seleção:", pool);
       reiniciarQuiz();
       return;
   }
