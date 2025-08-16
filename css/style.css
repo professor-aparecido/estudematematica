@@ -38,7 +38,7 @@ body {
 }
 
 .main {
-  padding: 30px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,8 +123,8 @@ body {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
-  padding: 25px;
-  margin-bottom: 25px;
+  padding: 15px;
+  margin-bottom: 5px;
 }
 
 .quiz-container {
@@ -147,7 +147,7 @@ body {
 #pergunta {
   font-size: 20px;
   border-top: 1px solid var(--fundo-secundario);
-  padding-top: 20px;
+  padding-top: 0 20px;
   margin-top: 5px; 
 }
 
@@ -155,7 +155,7 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 /* --- PROGRESSO --- */
@@ -163,7 +163,7 @@ body {
   background: var(--fundo-secundario);
   border-radius: 10px;
   height: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   overflow: hidden;
 }
 
@@ -178,7 +178,7 @@ body {
 /* --- ALTERNATIVAS --- */
 .alternativa, .gabarito-respostas li {
   background: var(--fundo-secundario);
-  padding: 16px;
+  padding: 5px;
   border-radius: 8px;
   margin-bottom: 12px;
   cursor: pointer;
