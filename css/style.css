@@ -163,7 +163,7 @@ body {
   background: var(--fundo-secundario);
   border-radius: 10px;
   height: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   overflow: hidden;
 }
 
