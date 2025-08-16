@@ -189,6 +189,9 @@ function confirmarResposta(){
   }
   const q = questoesSelecionadas[indiceQuestao];
   const correta = q.correta;
+
+  questoesSelecionadas[indiceQuestao].respostaDoUsuario = respostaSelecionada;
+
   if(respostaSelecionada===correta){
     document.getElementById("mensagem").innerHTML = `<span class="msg-acerto">✅ Muito bem! Você acertou.</span><span id="particles">🎉</span>`;
     somAcerto();
@@ -207,15 +210,62 @@ function proximaQuestao(){
   if(indiceQuestao < questoesSelecionadas.length){
     mostrarQuestao();
   } else {
-    const total = questoesSelecionadas.length;
-    document.getElementById("pergunta").textContent = `🎉 Teste finalizado! Você acertou ${acertos} de ${total} questões.`;
-    document.getElementById("imagemQuestao").style.display="none";
-    document.getElementById("alternativas").innerHTML = "";
-    document.getElementById("mensagem").innerHTML = "";
-    document.getElementById("confirmarBtn").style.display="none";
-    document.getElementById("proximaBtn").style.display="none";
-    document.getElementById("reiniciarBtn").style.display="inline-block";
-    atualizarBarraProgresso(100);
+    mostrarGabarito();
+  }
+}
+
+function mostrarGabarito() {
+  const total = questoesSelecionadas.length;
+  const quizCard = document.getElementById("quizCard");
+
+  let gabaritoHTML = `
+    <div class="pergunta-card">
+      <h2 style="color: var(--azul);">${acertos} de ${total} Acertos</h2>
+      <p>Revisão das questões:</p>
+    </div>
+  `;
+
+  questoesSelecionadas.forEach((q, i) => {
+    const letras = ["A", "B", "C", "D"];
+    const respostaCorreta = q.correta;
+    const respostaUsuario = q.respostaDoUsuario;
+    const acertou = (respostaUsuario === respostaCorreta);
+    
+    let alternativasHTML = q.alternativas.map((alt, index) => {
+      let classe = '';
+      if (index === respostaCorreta) {
+        classe = 'alternativa-correta';
+      }
+      if (index === respostaUsuario && !acertou) {
+        classe = 'alternativa-errada';
+      }
+      return `<li class="${classe}">
+        <span class="letra">${letras[index]}</span> ${alt}
+      </li>`;
+    }).join('');
+
+    gabaritoHTML += `
+      <div class="bloco-gabarito">
+        <h3>Questão ${i + 1}</h3>
+        <p>${q.pergunta}</p>
+        <div class="gabarito-respostas">
+          <ul>
+            ${alternativasHTML}
+          </ul>
+        </div>
+        <div class="gabarito-status">
+          ${acertou ? '✅ Sua resposta está correta!' : '❌ Sua resposta está incorreta.'}
+        </div>
+      </div>
+    `;
+  });
+
+  quizCard.innerHTML = gabaritoHTML;
+  quizCard.innerHTML += `<div class="botoes"><button id="reiniciarBtn" onclick="reiniciarQuiz()">Reiniciar</button></div>`;
+  document.getElementById("reiniciarBtn").style.display = "inline-block";
+  atualizarBarraProgresso(100);
+  if (window.MathJax) {
+    MathJax.typesetPromise();
   }
 }
 
