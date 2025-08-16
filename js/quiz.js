@@ -1,5 +1,4 @@
 /* =================== ESTADO =================== */
-const TOTAL_POR_TENTATIVA = 4;
 let questoesSelecionadas = [];
 let indiceQuestao = 0;
 let respostaSelecionada = null;
@@ -76,12 +75,14 @@ async function carregarTodasQuestoes(){
 }
 
 /* =================== FUNÇÕES DE INÍCIO DO QUIZ =================== */
-function iniciarQuiz(pool){
+// Adicione o parâmetro 'numQuestoes'
+function iniciarQuiz(pool, numQuestoes){
   acertos = 0;
   indiceQuestao = 0;
   respostaSelecionada = null;
-
-  questoesSelecionadas = embaralhar(pool).slice(0, Math.min(TOTAL_POR_TENTATIVA, pool.length));
+  
+  // Use o novo parâmetro para definir o tamanho da seleção
+  questoesSelecionadas = embaralhar(pool).slice(0, Math.min(numQuestoes, pool.length));
   
   if (questoesSelecionadas.length === 0) {
       alert("Nenhuma questão encontrada para a seleção. Verifique o console para mais detalhes.");
@@ -131,7 +132,9 @@ function iniciarQuiz(pool){
 async function iniciarQuizPorAssunto(area, assunto){
   await carregarTodasQuestoes();
   const pool = todasQuestoes.filter(q => q.area === area && q.assunto === assunto);
-  iniciarQuiz(pool);
+  // Obtém o número de perguntas do campo de seleção
+  const numPerguntas = parseInt(document.getElementById('numPerguntas').value);
+  iniciarQuiz(pool, numPerguntas);
 }
 
 /* =================== FUNÇÕES DE BUSCA =================== */
@@ -162,7 +165,7 @@ async function buscarHabilidade(){
           <p>${q.pergunta}</p>
           ${imgHtml}
           <div class="materiais">
-            <button class="material-btn quiz-btn" onclick="iniciarQuiz([todasQuestoes.find(item => item.codigo === '${q.codigo}')])">
+            <button class="material-btn quiz-btn" onclick="iniciarQuiz([todasQuestoes.find(item => item.codigo === '${q.codigo}')], 4)">
               Fazer Quiz
             </button>
           </div>
