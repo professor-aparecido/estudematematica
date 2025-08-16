@@ -9,7 +9,7 @@
     "banca": "Banca X",
     "orgao": "Orgão Y",
     "prova": "Prova A",
-    "pergunta": "Resolva a equação: \\[3x + 5 = 20\\].",
+    "pergunta": "Resolva a equação: \\(3x + 5 = 20\\).",
     "imagem": "",
     "alternativas": ["x = 5", "x = 10", "x = 15", "x = 20"],
     "correta": 0
