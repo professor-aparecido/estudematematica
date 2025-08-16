@@ -1,31 +1,29 @@
-/* =================== VARIÁVEIS DE CORES =================== */
+/* =================== TEMA 1: MODERNO E MINIMALISTA =================== */
+
+/* --- VARIÁVEIS DE CORES --- */
 :root {
-  --fundo-principal: #f0f2f5;
-  --fundo-secundario: #e6e8eb;
-  --texto-principal: #333;
-  --texto-secundario: #666;
-  --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --verde: #2d882d;
-  --azul: #4A90E2; /* Cor principal, atualizada */
-  --laranja: #f38630;
-  --acerto: #2e7d32;
-  --erro: #c62828;
+  --fundo-principal: #f8f9fa; /* Cinza bem claro */
+  --fundo-secundario: #e9ecef; /* Cinza claro */
+  --texto-principal: #212529; /* Cinza escuro */
+  --texto-secundario: #6c757d; /* Cinza médio */
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra mais suave */
+  --verde: #28a745;
+  --azul: #007bff; /* Azul padrão */
+  --laranja: #fd7e14;
+  --acerto: #28a745;
+  --erro: #dc3545;
   --badge: #007bff;
 
-  /* Novas cores adicionadas */
-  --azul-claro: #E8F2FC;
-  --azul-escuro: #3567a5;
-  --cinza-claro: #f7f7f7;
-  --cinza-medio: #e0e0e0;
-  --cinza-escuro: #333;
+  --cor-destaque: #343a40; /* Azul escuro/preto para destaque */
+  --cor-destaque-hover: #495057; /* Escurece no hover */
 }
 
-/* =================== ESTILOS GLOBAIS E TIPOGRAFIA =================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* --- ESTILOS GLOBAIS E TIPOGRAFIA --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 * {
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,22 +33,22 @@ body {
   padding: 0;
   background-color: var(--fundo-principal);
   color: var(--texto-principal);
-  line-height: 1.4; /* Espaçamento de linha ajustado */
+  line-height: 1.5; /* Espaçamento de linha confortável */
 }
 
 .main {
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: calc(100vh - 80px);
 }
 
-/* =================== ESTILO DO CABEÇALHO (TOPBAR) =================== */
+/* --- ESTILO DO CABEÇALHO (TOPBAR) --- */
 .topbar {
-  background: var(--azul);
+  background: var(--cor-destaque);
   color: #fff;
-  padding: 15px 0;
+  padding: 20px 0;
   box-shadow: var(--sombra);
 }
 
@@ -65,88 +63,73 @@ body {
 
 .topbar h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 26px;
+  font-weight: 700;
 }
 
-/* =================== ESTILO DOS BOTÕES GERAIS =================== */
-.btn-voltar,
-.material-btn,
-.quiz-btn,
-#confirmarBtn,
-#proximaBtn,
-#reiniciarBtn,
-.bloco-busca button {
-  background-color: var(--azul);
-  color: white;
+/* --- ESTILO DOS BOTÕES GERAIS --- */
+.material-btn, .quiz-btn, #confirmarBtn, #proximaBtn, #reiniciarBtn, .bloco-busca button, .btn-voltar {
+  background-color: var(--cor-destaque);
+  color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 50px; /* Botões arredondados */
-  transition: background-color 0.3s ease, transform 0.1s ease;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s;
+}
+
+.material-btn:hover, .quiz-btn:hover, .bloco-busca button:hover, .btn-voltar:hover {
+  background-color: var(--cor-destaque-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .btn-voltar {
-  background: #fff;
-  color: var(--azul);
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.btn-voltar:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.bloco-busca button:hover,
-.material-btn:hover,
-.quiz-btn:hover {
-  background-color: var(--azul-escuro);
+  background: var(--fundo-secundario);
+  color: var(--texto-principal);
+  font-weight: 500;
 }
 
 #confirmarBtn {
   background: var(--verde);
+}
+#confirmarBtn:hover {
+  background-color: #218838;
 }
 
 #proximaBtn {
   background: var(--azul);
   display: none;
 }
+#proximaBtn:hover {
+  background-color: #0069d9;
+}
 
 #reiniciarBtn {
   background: var(--laranja);
   display: none;
 }
+#reiniciarBtn:hover {
+  background-color: #e06c00;
+}
 
-/* =================== ESTILOS DAS ÁREAS DE CONTEÚDO E QUIZ =================== */
+/* --- ESTILOS DAS ÁREAS DE CONTEÚDO E QUIZ --- */
 .quiz-container, .bloco-gabarito, .bloco-assunto, .bloco-busca, .areaBtn {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
-  padding: 20px;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  padding: 25px;
+  margin-bottom: 25px;
 }
 
 .quiz-container {
-  padding: 30px;
   max-width: 800px;
   width: 100%;
-}
-
-.bloco-assunto, .bloco-busca, .bloco-gabarito {
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-}
-
-.bloco-assunto:hover, .bloco-busca:hover {
-  transform: translateY(-2px);
 }
 
 .pergunta-card h2 {
@@ -156,32 +139,30 @@ body {
 }
 
 .pergunta-card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-/* Estilo para a Pergunta Específica */
 #pergunta {
-  font-size: 20px; /* Fonte da pergunta menor */
-  border-top: 1px solid var(--cinza-medio); /* Linha horizontal */
-  padding-top: 15px; 
-  margin-top: 25px;
+  font-size: 20px;
+  border-top: 1px solid var(--fundo-secundario);
+  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .pergunta-card img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
 }
 
-/* =================== PROGRESSO =================== */
+/* --- PROGRESSO --- */
 .progresso {
   background: var(--fundo-secundario);
   border-radius: 10px;
-  height: 12px;
-  margin-bottom: 25px;
+  height: 10px;
+  margin-bottom: 30px;
   overflow: hidden;
 }
 
@@ -193,17 +174,12 @@ body {
   transition: width 0.4s ease-in-out;
 }
 
-/* =================== ALTERNATIVAS =================== */
-.alternativas-lista {
-  list-style: none;
-  padding: 0;
-}
-
+/* --- ALTERNATIVAS --- */
 .alternativa, .gabarito-respostas li {
   background: var(--fundo-secundario);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
   display: flex;
@@ -213,6 +189,7 @@ body {
 .alternativa:hover, .alternativa.selecionada {
   background: #e1e3e6;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .alternativa.selecionada {
@@ -221,28 +198,28 @@ body {
 }
 
 .alternativa .letra, .gabarito-respostas .letra {
-  font-weight: bold;
-  color: var(--azul);
-  margin-right: 10px;
-  
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
+  font-weight: 700;
+  color: var(--cor-destaque);
+  margin-right: 15px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--azul);
+  border: 2px solid var(--cor-destaque);
   border-radius: 50%;
   background-color: #fff;
 }
 
-/* =================== MENSAGENS E GABARITO =================== */
+/* --- MENSAGENS E GABARITO --- */
 #mensagem {
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .msg-acerto {
@@ -261,9 +238,9 @@ body {
 
 .gabarito-respostas li {
   background: var(--fundo-secundario);
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
 }
 
 .alternativa-correta {
@@ -277,11 +254,11 @@ body {
 }
 
 .gabarito-status {
-  margin-top: 15px;
+  margin-top: 20px;
   font-weight: bold;
 }
 
-/* =================== PÁGINA INICIAL E BUSCA =================== */
+/* --- PÁGINA INICIAL E BUSCA --- */
 #telaInicial {
   display: flex;
   flex-wrap: wrap;
@@ -299,22 +276,23 @@ body {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  padding: 25px;
+  padding: 30px;
   width: calc(33.333% - 14px);
   color: var(--texto-principal);
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 500;
   transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 8px;
 }
 
 .areaBtn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .areaBtn span {
-  font-size: 40px;
-  margin-bottom: 10px;
+  font-size: 45px;
+  margin-bottom: 15px;
 }
 
 .conteudo-area {
@@ -325,7 +303,7 @@ body {
 .bloco-assunto h2 {
   font-size: 24px;
   margin: 0 0 10px;
-  color: var(--azul);
+  color: var(--cor-destaque);
 }
 
 .bloco-assunto p {
@@ -342,55 +320,50 @@ body {
 .material-btn {
   background: var(--fundo-secundario);
   color: var(--texto-secundario);
-  font-weight: bold;
-  border-radius: 8px;
-}
-
-.material-btn.quiz-btn {
-  background: var(--verde);
-  color: #fff;
+  font-weight: 500;
+  border-radius: 6px;
 }
 
 .busca-input-wrap {
   display: flex;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .busca-input-wrap input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid var(--cinza-medio);
-  border-radius: 50px;
+  padding: 12px;
+  border: 1px solid var(--fundo-secundario);
+  border-radius: 6px;
   font-size: 16px;
   width: 100%;
   max-width: 300px;
   box-sizing: border-box;
 }
 
-/* Estilo para a lista de habilidades */
 .habilidades-lista {
   text-align: justify;
 }
 
 .habilidades-lista li {
-  background-color: var(--azul-claro);
-  border-left: 5px solid var(--azul);
-  margin-bottom: 10px;
-  padding: 15px;
+  background-color: var(--fundo-secundario);
+  border-left: 5px solid var(--cor-destaque);
+  margin-bottom: 12px;
+  padding: 16px;
   border-radius: 8px;
+  font-size: 16px;
 }
 
 .habilidades-lista li strong {
-  color: var(--azul-escuro);
+  color: var(--cor-destaque);
 }
 
 #resultados .bloco-assunto {
   background-color: #f7f7f7;
-  border-left: 5px solid var(--badge);
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 6px;
+  border-left: 5px solid var(--azul);
+  padding: 18px;
+  margin-bottom: 18px;
+  border-radius: 8px;
   transition: transform 0.2s;
 }
 
@@ -398,15 +371,15 @@ body {
   transform: translateY(-2px);
 }
 
-/* =================== FOOTER =================== */
+/* --- FOOTER --- */
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   color: var(--texto-secundario);
   font-size: 14px;
 }
 
-/* =================== RESPONSIVIDADE =================== */
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
   .areaBtn {
     width: calc(50% - 10px);
@@ -430,6 +403,6 @@ body {
   .topbar-inner {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    gap: 15px;
   }
 }
