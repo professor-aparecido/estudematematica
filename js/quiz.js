@@ -8,11 +8,11 @@ let todasQuestoes = [];
 
 /* =================== CONFIGURAÇÃO =================== */
 const arquivosQuestoes = {
-  'Álgebra': '/data/algebra.json',
-  'Geometria': '/data/geometria.json',
-  'Grandezas e Medidas': '/data/medidas.json',
-  'Números e Operações': '/data/numeros.json',
-  'Probabilidade e Estatística': '/data/probabilidade_estatistica.json'
+  'Álgebra': 'data/algebra.json',
+  'Geometria': 'data/geometria.json',
+  'Grandezas e Medidas': 'data/medidas.json',
+  'Números e Operações': 'data/numeros.json',
+  'Probabilidade e Estatística': 'data/probabilidade_estatistica.json'
 };
 
 /* =================== SOM =================== */
