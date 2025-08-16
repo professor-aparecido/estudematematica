@@ -177,30 +177,25 @@ async function buscarHabilidade(){
   }
 }
 
-async function mostrarTodasHabilidades() {
+// A nova função para mostrar todas as habilidades
+function mostrarTodasHabilidades() {
   const resultadosDiv = document.getElementById('resultados');
   resultadosDiv.innerHTML = 'Carregando...';
 
-  await carregarTodasQuestoes();
-  const habilidades = {};
-  todasQuestoes.forEach(q => {
-    if (q.habilidade_bncc && q.habilidade_bncc_texto) {
-      habilidades[q.habilidade_bncc] = q.habilidade_bncc_texto;
-    }
-  });
-
-  const habilidadesOrdenadas = Object.keys(habilidades).sort();
+  const habilidadesOrdenadas = habilidadesBNCC.sort((a, b) => a.codigo.localeCompare(b.codigo));
   
   let htmlResultados = `<h3>Habilidades Encontradas:</h3>`;
   htmlResultados += `<ul>`;
-  habilidadesOrdenadas.forEach(codigo => {
+
+  habilidadesOrdenadas.forEach(habilidade => {
     htmlResultados += `
       <li>
-        <strong>${codigo}</strong>: ${habilidades[codigo]}
-        <button onclick="buscarHabilidadeComCodigo('${codigo}')">Ver questões</button>
+        <strong>${habilidade.codigo}</strong>: ${habilidade.descricao}
+        <button onclick="buscarHabilidadeComCodigo('${habilidade.codigo}')">Ver questões</button>
       </li>
     `;
   });
+
   htmlResultados += `</ul>`;
   resultadosDiv.innerHTML = htmlResultados;
 }
@@ -300,8 +295,8 @@ function mostrarGabarito() {
         classe = 'alternativa-errada';
       }
       return `<li class="${classe}">
-         <span class="letra">${letras[index]}</span> ${alt}
-       </li>`;
+          <span class="letra">${letras[index]}</span> ${alt}
+        </li>`;
     }).join('');
 
     gabaritoHTML += `
