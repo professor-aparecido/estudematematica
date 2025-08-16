@@ -69,7 +69,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 80px); /* Altura mínima para o footer ficar no final */
+  min-height: calc(100vh - 80px);
 }
 
 /* Estilo do Quiz */
@@ -141,7 +141,7 @@ body {
 }
 
 .alternativa.selecionada {
-  background: #d4eaf7; /* Fundo mais visível */
+  background: #d4eaf7;
   box-shadow: inset 0 0 0 2px var(--azul);
 }
 
@@ -150,10 +150,9 @@ body {
   color: var(--azul);
   margin-right: 10px;
   
-  /* Círculo */
   width: 30px;
   height: 30px;
-  min-width: 30px; /* Garante que o círculo não diminua */
+  min-width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -423,13 +422,99 @@ button:hover {
   .botoes button {
     width: 100%;
   }
+}
 
-  .topbar-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-  .habilidades-lista {
+/* =================== ESTILOS ADICIONAIS PARA MELHORAR O VISUAL =================== */
+
+/* --- Fontes e Tipografia --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--cinza-escuro);
+}
+
+/* --- Cores e Paleta --- */
+:root {
+  --azul: #4A90E2;
+  --azul-claro: #E8F2FC;
+  --azul-escuro: #3567a5;
+  --cinza-claro: #f7f7f7;
+  --cinza-medio: #e0e0e0;
+  --cinza-escuro: #333;
+}
+
+/* --- Layout e Espaçamento --- */
+.bloco-busca,
+.bloco-assunto,
+.bloco-gabarito {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.bloco-busca:hover,
+.bloco-assunto:hover {
+  transform: translateY(-2px);
+}
+
+.main {
+  padding: 20px;
+}
+
+/* --- Estilo dos Botões --- */
+.btn-voltar,
+.material-btn,
+.quiz-btn,
+#confirmarBtn,
+#proximaBtn,
+#reiniciarBtn,
+.bloco-busca button,
+.bloco-gabarito button {
+  background-color: var(--azul);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.bloco-busca button:hover,
+.material-btn:hover,
+.quiz-btn:hover {
+  background-color: var(--azul-escuro);
+}
+
+.busca-input-wrap input[type="text"] {
+  padding: 10px;
+  border: 1px solid var(--cinza-medio);
+  border-radius: 50px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+/* Estilo para a lista de habilidades */
+.habilidades-lista {
   text-align: justify;
 }
+
+.habilidades-lista li {
+  background-color: var(--azul-claro);
+  border-left: 5px solid var(--azul);
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.habilidades-lista li strong {
+  color: var(--azul-escuro);
 }
