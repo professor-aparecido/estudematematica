@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Quiz do Professor Aparecido</title>
-<link rel="stylesheet" href="css/style.css">
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-<script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['\\[', '\\]'], ['$$', '$$']]
-      }
-    };
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estude Matemática</title>
+    <link rel="stylesheet" href="css/style.css">
     
+    <script>
+      // Configuração para processar equações inline \(...\) e outras
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
 </head>
 <body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <h1 class="titulo">Estude Matemática</h1>
+            <a href="index.html" class="btn-voltar">Voltar</a>
+        </div>
+    </header>
 
-<header class="topbar">
-  <div class="topbar-inner">
-    <h1>Quiz do Professor Aparecido</h1>
-  </div>
-</header>
+    <main class="main">
+        <div class="conteudo-area">
+            <div id="telaInicial">
+                <a href="algebra.html" class="areaBtn">
+                    <span>📚</span>Álgebra
+                </a>
+                <a href="geometria.html" class="areaBtn">
+                    <span>📐</span>Geometria
+                </a>
+                <a href="medidas.html" class="areaBtn">
+                    <span>📏</span>Grandezas e Medidas
+                </a>
+                <a href="numeros.html" class="areaBtn">
+                    <span>🔢</span>Números e Operações
+                </a>
+                <a href="probabilidade_estatistica.html" class="areaBtn">
+                    <span>📊</span>Probabilidade e Estatística
+                </a>
+                <a href="busca.html" class="areaBtn">
+                    <span>🔎</span>Busca por BNCC
+                </a>
+            </div>
+        </div>
 
-<main class="main">
+        <div id="quizCard" class="quiz-container" style="display:none;">
+            </div>
+    </main>
 
-  <section id="telaInicial" aria-label="Escolha da área de estudo">
-    <a href="algebra.html" class="areaBtn algebra">
-      <span>🧮</span>Álgebra
-    </a>
-    <a href="geometria.html" class="areaBtn geometria">
-      <span>📐</span>Geometria
-    </a>
-    <a href="numeros.html" class="areaBtn numeros">
-      <span>🔢</span>Números e Operações
-    </a>
-    <a href="medidas.html" class="areaBtn medidas">
-      <span>📏</span>Grandezas e Medidas
-    </a>
-    <a href="probabilidade_estatistica.html" class="areaBtn prob">
-      <span>🎲</span>Probabilidade e Estatística
-    </a>
-    <a href="bncc.html" class="areaBtn todas">
-      <span>🌐</span>Buscar por Habilidade BNCC
-    </a>
-  </section>
+    <footer class="footer">
+        <p>&copy; 2024 Estude Matemática. Todos os direitos reservados.</p>
+    </footer>
 
-  <div class="footer">© 2025 • Quiz didático para estudos</div>
-</main>
-
+    <script src="js/quiz.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
