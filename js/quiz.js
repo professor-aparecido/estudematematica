@@ -185,9 +185,7 @@ function mostrarTodasHabilidades() {
   const habilidadesOrdenadas = habilidadesBNCC.sort((a, b) => a.codigo.localeCompare(b.codigo));
   
   let htmlResultados = `<h3>Habilidades Encontradas:</h3>`;
-  htmlResultados += `<ul>`;
   
-// Apenas esta linha foi alterada para incluir a classe
   htmlResultados += `<ul class="habilidades-lista">`;
   
   habilidadesOrdenadas.forEach(habilidade => {
