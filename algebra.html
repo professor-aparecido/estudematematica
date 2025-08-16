@@ -1,90 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Álgebra | Quiz do Professor Aparecido</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    
-        <script>
-        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['\\[', '\\]'], ['$$', '$$']] } };
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
     </script>
-
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <h1 class="titulo">Álgebra</h1>
+            <a href="index.html" class="btn-voltar">Voltar</a>
+        </div>
+    </header>
 
-<header class="topbar">
-  <div class="topbar-inner">
-    <h1>Álgebra</h1>
-    <a href="index.html" class="btn-voltar">Voltar</a>
-  </div>
-</header>
+    <main class="main">
+        <div class="conteudo-area">
+            <div class="bloco-area">
+                <h2>Escolha um Assunto</h2>
+                <div class="sub-area">
+                    <button class="subAreaBtn" onclick="iniciarQuizPorAssunto('Matemática', 'Álgebra')">Fazer Quiz</button>
+                    <a href="material_teorico.html" class="subAreaBtn">Material Teórico</a>
+                    <a href="aplicativo.html" class="subAreaBtn">Aplicativo</a>
+                </div>
+            </div>
+        </div>
 
-<main class="main">
+        <div id="quizCard" class="quiz-container" style="display:none;">
+                    </div>
+    </main>
 
-  <section class="conteudo-area">
-    <div class="bloco-assunto">
-      <h2>Equações</h2>
-      <p>Material teórico, videoaulas e exercícios para dominar a resolução de equações de 1º e 2º grau.</p>
-      <div class="materiais">
-        <button class="material-btn">Material Teórico</button>
-        <button class="material-btn">Videoaulas</button>
-        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Álgebra', 'Equações')">
-          Quiz
-        </button>
-      </div>
-    </div>
-    
-    <div class="bloco-assunto">
-      <h2>Expressões Algébricas</h2>
-      <p>Aprenda a simplificar e operar com expressões que contêm variáveis e números.</p>
-      <div class="materiais">
-        <button class="material-btn">Material Teórico</button>
-        <button class="material-btn">Videoaulas</button>
-        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Álgebra', 'Expressões Algébricas')">
-          Quiz
-        </button>
-      </div>
-    </div>
-    
-    <div class="bloco-assunto">
-      <h2>Funções</h2>
-      <p>Introdução ao conceito de funções, como representá-las e exemplos práticos.</p>
-      <div class="materiais">
-        <button class="material-btn">Material Teórico</button>
-        <button class="material-btn">Videoaulas</button>
-        <button class="material-btn quiz-btn" onclick="iniciarQuizPorAssunto('Álgebra', 'Funções')">
-          Quiz
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="quiz-container" id="quizCard" aria-live="polite" style="display:none;">
-    <div class="pergunta-card">
-      <div class="progresso">
-        <div id="barraProgresso"></div>
-      </div>
-      <h2 id="cabecalho1"></h2>
-      <p id="cabecalho2" class="dados-prova"></p>
-      <h3 id="pergunta"></h3>
-      <img id="imagemQuestao" src="" alt="Imagem da questão" style="display:none;">
-      <div id="alternativas" class="alternativas-lista"></div>
-    </div>
-    <div id="mensagem" aria-live="assertive"></div>
-    <div class="botoes">
-      <button id="confirmarBtn" onclick="confirmarResposta()">Confirmar</button>
-      <button id="proximaBtn" onclick="proximaQuestao()">Próxima</button>
-      <button id="reiniciarBtn" onclick="reiniciarQuiz()">Reiniciar</button>
-    </div>
-  </section>
-
-  <div class="footer">© 2025 • Quiz didático para estudos</div>
-</main>
-
-<script src="js/quiz.js"></script>
-
+    <footer class="footer">
+        <p>&copy; 2024 Estude Matemática. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="js/quiz.js"></script>
 </body>
 </html>
