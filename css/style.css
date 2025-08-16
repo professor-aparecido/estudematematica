@@ -123,7 +123,7 @@ body {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
-  padding: 5px;   /* --- 25 para 5 --- */
+  padding: 25px;   
   margin-bottom: 5px;  /* --- 25 para 5 --- */
 }
 
@@ -155,7 +155,7 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  margin-bottom: 10px; /* --- 20 para 10 --- */
+  margin-bottom: 5px; /* --- 20 para 5 --- */
 }
 
 /* --- PROGRESSO --- */
