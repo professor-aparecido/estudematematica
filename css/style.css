@@ -178,7 +178,7 @@ body {
 /* --- ALTERNATIVAS --- */
 .alternativa, .gabarito-respostas li {
   background: var(--fundo-secundario);
-  padding: 16px 16px 16px 0px; /*  16 para atual  */
+  padding: 16px;
   border-radius: 8px;
   margin-bottom: 12px;
   cursor: pointer;
