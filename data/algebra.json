@@ -1,0 +1,62 @@
+[
+  {
+    "codigo": "ALG-001",
+    "disciplina": "Matemática",
+    "area": "Álgebra",
+    "assunto": "Equações",
+    "habilidade_bncc": "EF08MA08",
+    "ano": "2023",
+    "banca": "Banca X",
+    "orgao": "Orgão Y",
+    "prova": "Prova A",
+    "pergunta": "Resolva a equação: \\[3x + 5 = 20\\].",
+    "imagem": "",
+    "alternativas": ["x = 5", "x = 10", "x = 15", "x = 20"],
+    "correta": 0
+  },
+  {
+    "codigo": "ALG-002",
+    "disciplina": "Matemática",
+    "area": "Álgebra",
+    "assunto": "Expressões Algébricas",
+    "habilidade_bncc": "EF08MA07",
+    "ano": "2022",
+    "banca": "Banca X",
+    "orgao": "Orgão Z",
+    "prova": "Prova B",
+    "pergunta": "Simplifique a expressão: 2(x+3) - x.",
+    "imagem": "",
+    "alternativas": ["x + 3", "2x + 3", "x + 6", "2x + 6"],
+    "correta": 2
+  },
+  {
+    "codigo": "ALG-003",
+    "disciplina": "Matemática",
+    "area": "Álgebra",
+    "assunto": "Equações",
+    "habilidade_bncc": "EF07MA08",
+    "ano": "2021",
+    "banca": "Banca Y",
+    "orgao": "Orgão T",
+    "prova": "Prova C",
+    "pergunta": "O valor de a em 5a - 10 = 0 é:",
+    "imagem": "",
+    "alternativas": ["-2", "0", "2", "10"],
+    "correta": 2
+  },
+  {
+    "codigo": "ALG-004",
+    "disciplina": "Matemática",
+    "area": "Álgebra",
+    "assunto": "Funções",
+    "habilidade_bncc": "EM13MAT310",
+    "ano": "2020",
+    "banca": "Banca Z",
+    "orgao": "Orgão R",
+    "prova": "Prova D",
+    "pergunta": "Se f(x)=2x+1, então f(4) é:",
+    "imagem": "",
+    "alternativas": ["7", "8", "9", "10"],
+    "correta": 2
+  }
+]
