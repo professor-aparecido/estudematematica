@@ -422,3 +422,7 @@ body {
     gap: 15px;
   }
 }
+/* Esconde o botão 'Voltar' apenas na página inicial */
+body.home .btn-voltar {
+    display: none;
+}
