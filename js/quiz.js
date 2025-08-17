@@ -99,6 +99,7 @@ function iniciarQuiz(pool){
         <div id="barraProgresso"></div>
       </div>
       <h2 id="cabecalho1"></h2>
+      <p id="cabecalho2" class="dados-prova"></p>
       <h3 id="pergunta"></h3>
       <img id="imagemQuestao" src="" alt="Imagem da questão" style="display:none;">
       <div id="alternativas" class="alternativas-lista"></div>
