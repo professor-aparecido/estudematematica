@@ -139,6 +139,7 @@ body {
 }
 
 .pergunta-card h3 {
+  font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 10px; 
