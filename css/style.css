@@ -34,7 +34,7 @@ body {
   padding: 0;
   background-color: var(--fundo-secundario);
   color: var(--texto-principal);
-  line-height: 1;
+  line-height: 1.5;
 }
 
 .main {
