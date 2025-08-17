@@ -164,6 +164,7 @@ body {
   border-radius: 10px;
   height: 10px;
   margin-bottom: 0px; /* --- 30 para 0 --- */
+  margin-top: -15px; /* --- acrescentei --- */
   overflow: hidden;
 }
 
