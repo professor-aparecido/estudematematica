@@ -135,7 +135,7 @@ body {
 .pergunta-card h2 {
   font-size: 18px;
   color: var(--texto-secundario);
-  margin: 0 0 5px; 
+  margin: 0; /* --- 0 0 5px para 0 --- */
 }
 
 .pergunta-card h3 {
