@@ -133,19 +133,19 @@ body {
 }
 
 .pergunta-card h2 {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--texto-secundario);
   margin: 0 0 5px; 
 }
 
 .pergunta-card h3 {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
   margin-bottom: 10px; 
 }
 
 #pergunta {
-  font-size: 20px;
+  font-size: 16px;
   border-top: 3px solid var(--fundo-secundario);
   padding-top: 10px; /* --- 20 para 10 --- */
   margin-top: 0px; 
