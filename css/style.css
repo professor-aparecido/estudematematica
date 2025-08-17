@@ -146,7 +146,7 @@ body {
 
 #pergunta {
   font-size: 20px;
-  border-top: 2px solid var(--fundo-secundario);
+  border-top: 5px solid var(--fundo-secundario);
   padding-top: 5px; /* --- 20 para 5 --- */
   margin-top: 10px; 
 }
